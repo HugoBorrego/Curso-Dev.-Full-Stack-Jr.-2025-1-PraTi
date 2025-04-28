@@ -47,3 +47,16 @@ let counter
 for (counter = 0; counter <= 10; counter++) {
     console.log(`${multiplier} * ${counter} =`, multiplier*counter);
 }
+
+// Pedir ao usuário para adivinhar um número entre 1 e 10.
+const correctNumber = Math.floor(Math.random() * 10) + 1;
+let guess;
+do {
+    guess = parseInt(prompt("Adivinhe o número entre 1 e 10:"));
+    if (guess < correctNumber) {
+        console.log("Tente um número maior.");
+    } else if (guess > correctNumber) {
+        console.log("Tente um número menor.");
+    }
+} while (guess !== correctNumber);
+console.log("Parabéns! Você acertou o número.");
