@@ -1,16 +1,13 @@
-let listaFrutas = Array()
-listaFrutas[0] = 'Abacate' // Adicionando no array de indice 0
-listaFrutas[1] = 'Banana' // Adicionando no array de indice 1
 
-listaFrutas.push('Caqui') // Adicionando no final do array
-listaFrutas.unshift('Melancia') // Adicionando no começo do array
-listaFrutas.push('pop')
-listaFrutas.pop() // Excluindo o último do array
-listaFrutas.unshift() // Excluindo no começo do array
+let a = 0
+let b = 1;
 
+console.log(a);
+console.log(b);
 
-for (let i = 0; i < listaFrutas.length; i++) {
-    console.log(listaFrutas[i])  
+for (let i = 2; i < 10; i++) {
+    let temp = a + b;
+    console.log(temp);
+    a = b;
+    b = temp;
 }
-
-console.table(listaFrutas)
