@@ -1,13 +1,25 @@
+const readline = require('readline-sync');
 
-let a = 0
-let b = 1;
+function mostrarMenu() {
+    console.log("-- MENU --");
+    console.log("1. Opção 1");
+    console.log("2. Opção 2");
+    console.log("3. Opção 3");
 
-console.log(a);
-console.log(b);
+    let opcao = readline.question("Escolha uma opcao: ");
 
-for (let i = 2; i < 10; i++) {
-    let temp = a + b;
-    console.log(temp);
-    a = b;
-    b = temp;
+    switch (opcao) {
+        case "1":
+            console.log("Você escolheu a Opção 1!");
+            break;
+        case "2":
+            console.log("Você escolheu a Opção 2!");
+            break;
+        case "3":
+            console.log("Você escolheu a Opção 3!");
+            break;
+        default:
+            console.log("Opção inválida!");
+    }
 }
+mostrarMenu();
