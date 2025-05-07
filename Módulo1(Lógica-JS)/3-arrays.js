@@ -77,4 +77,5 @@ console.log(somar)
 let mercado = []
 mercado['Fruteira'] = ['Maça', 'Pera', 'Abacaxi']
 mercado['Açougue'] = ['Picanha', 'Alcatra', 'Filé']
+
 console.table(mercado)
