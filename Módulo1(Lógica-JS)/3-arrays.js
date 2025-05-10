@@ -39,8 +39,9 @@ console.log(media)
 console.log(pares)
 
 // Ordene um array numeros em ordem crescente
+numeros = [5, 8, 1, 3, 9, 2]
 let ordenado = numeros.sort((a, b) => a - b)
-console.log(numeros)
+console.log(ordenado)
 
 
 // MÉTODO BubbleSort 
@@ -79,3 +80,10 @@ mercado['Fruteira'] = ['Maça', 'Pera', 'Abacaxi']
 mercado['Açougue'] = ['Picanha', 'Alcatra', 'Filé']
 
 console.table(mercado)
+
+let listaCoisas = Array()
+listaCoisas['Hardware'] = ['Placa de Vídeo']
+listaCoisas['Hardware'][1] = 'Smartwatch'
+listaCoisas['Games'] = ['GTA VI']
+listaCoisas['Games'][1] = 'The Witcher'
+console.table(listaCoisas)

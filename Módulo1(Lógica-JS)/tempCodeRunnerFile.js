@@ -1,17 +1,10 @@
-// Matriz
-let matriz = []
-let somar = 0
-for (let i = 0; i < 3; i++) {
-    matriz[i] = []
-    for (let j = 0; j < 3; j++) {
-        matriz[i][j] = 7
-        if (i == j) {
-            somar += matriz[i][j]
+function MaiorNumero(arr1) {
+    let maiorNumero = arr1[0]
+    for (let i = 0; i < arr1.length; i++) {
+        if (arr1[i] > maiorNumero) {
+            maiorNumero = arr1[i]
         }
     }
+    return maiorNumero
 }
-console.table(matriz)
-// Calculo da diagonal da matriz
-
-
-console.log(somar)
+console.log(MaiorNumero([5, 8, 2, 7, 3]))
