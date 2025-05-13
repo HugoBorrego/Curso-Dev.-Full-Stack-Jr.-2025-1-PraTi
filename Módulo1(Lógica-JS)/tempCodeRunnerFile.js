@@ -1,10 +1,8 @@
-function MaiorNumero(arr1) {
-    let maiorNumero = arr1[0]
-    for (let i = 0; i < arr1.length; i++) {
-        if (arr1[i] > maiorNumero) {
-            maiorNumero = arr1[i]
-        }
-    }
-    return maiorNumero
-}
-console.log(MaiorNumero([5, 8, 2, 7, 3]))
+let date1 = new Date(2014, 10, 29)
+let date2 = new Date(2025, 5, 13)
+
+console.log(date1.getTime()) // Da o valor em milisegundos
+
+let milissegundosEntreDatas = Math.abs(date1.getTime() - date2.getTime())
+let milisegundosPorDia = (24 * 60 * 60 * 1000)
+console.log(`A diferença entre as datas por dia é ${(milissegundosEntreDatas/milisegundosPorDia).toFixed(0)}`)
