@@ -1,25 +1,28 @@
+let filmes = [
+    {nome: 'Deadpool', genero: 'Ação'},
+    {nome: 'John Wick', genero: 'Ação'},
+    {nome: 'Mad Max: Estrada da Fúria', genero: 'Ação'},
+    {nome: 'Logan', genero: 'Drama'},
+    {nome: 'Blade Runner 2049', genero: 'Ficção Científica'},
+    {nome: 'O Exterminador do Futuro 2', genero: 'Ficção Científica'},
+    {nome: 'Aliens, O Resgate', genero: 'Ficção Científica'},
+    {nome: 'Halloween', genero: 'Terror'},
+    {nome: 'O Iluminado', genero: 'Terror'},
+    {nome: 'Clube da Luta', genero: 'Suspense'},
+    {nome: 'O Poderoso Chefão', genero: 'Drama'},
+    {nome: 'Batman: O Cavaleiro das Trevas', genero: 'Crime'},
+    {nome: 'Senhor dos Anéis: O Retorno do Rei', genero: 'Fantasia'},
+    {nome: 'Harry Potter e o Prisioneiro de Azkaban', genero: 'Fantasia'},
+    {nome: 'La La Land', genero: 'Romance'}
+];
 
-let professor = {
-    nome: 'Stark Parker',
-    materia: 'Física',
-    notas: {
-        aluno1: [5, 2, 8],
-        aluno2: [10, 7]
+let contagemFilmes = {}
+filmes.forEach((filme) => {
+    if (contagemFilmes[filme.genero]) {
+        contagemFilmes[filme.genero]++
+    } else {
+        contagemFilmes[filme.genero] = 1
     }
-}
+})
 
-let somaNotas = 0
-let nrAlunos = 0
-
-for (let aluno in professor.notas) {
-    somaNotas += Array.isArray(professor.notas[aluno]) ? professor.notas[aluno].reduce((acc, nota) => acc + nota, 0)/professor.notas[aluno].length : professor.notas[aluno]
-    nrAlunos++
-}
-
-let mediaProfessor = somaNotas / nrAlunos
-
-if (mediaProfessor > 6) {
-    console.log(`A média do professor é ${mediaProfessor}, ele está acima do padrão`)
-} else {
-    console.log(`A média do professor é ${mediaProfessor}, ele está abaixo do padrão`)
-}
+console.table(contagemFilmes)

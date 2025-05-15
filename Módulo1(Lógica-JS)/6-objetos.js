@@ -71,3 +71,56 @@ if (mediaProfessor > 6) {
 } else {
     console.log(`A média do professor é ${mediaProfessor}, ele está abaixo do padrão`)
 }
+
+
+
+let livraria = [
+    {titulo: '1984', autor: 'George Orwell', ano: 1984},
+    {titulo: 'O profeta', autor: 'Endrew Berthold', ano: 2001},
+    {titulo: 'Código Limpo', autor: 'Martin', ano: 2010},
+    {titulo: 'O Velho e o Mar', autor: 'Hemmingway', ano: 1910},
+    {titulo: 'O Príncipe', autor: 'Maquiável', ano: 2002}
+]
+
+// Usando FOR-IN
+for (let livros in livraria) {
+    if (livraria[livros].ano < 2000) {
+        console.log(livraria[livros])
+    }
+}
+
+// Usando FOR-OF
+for (let livros of livraria) {
+    if (livros.ano > 2000) {
+        console.log(livros)
+    }
+}
+
+let filmes = [
+    {nome: 'Deadpool', genero: 'Ação'},
+    {nome: 'John Wick', genero: 'Ação'},
+    {nome: 'Mad Max: Estrada da Fúria', genero: 'Ação'},
+    {nome: 'Logan', genero: 'Drama'},
+    {nome: 'Blade Runner 2049', genero: 'Ficção Científica'},
+    {nome: 'O Exterminador do Futuro 2', genero: 'Ficção Científica'},
+    {nome: 'Aliens, O Resgate', genero: 'Ficção Científica'},
+    {nome: 'Halloween', genero: 'Terror'},
+    {nome: 'O Iluminado', genero: 'Terror'},
+    {nome: 'Clube da Luta', genero: 'Suspense'},
+    {nome: 'O Poderoso Chefão', genero: 'Drama'},
+    {nome: 'Batman: O Cavaleiro das Trevas', genero: 'Crime'},
+    {nome: 'Senhor dos Anéis: O Retorno do Rei', genero: 'Fantasia'},
+    {nome: 'Harry Potter e o Prisioneiro de Azkaban', genero: 'Fantasia'},
+    {nome: 'La La Land', genero: 'Romance'}
+];
+
+let contagemFilmes = {}
+filmes.forEach((filme) => {
+    if (contagemFilmes[filme.genero]) {
+        contagemFilmes[filme.genero]++
+    } else {
+        contagemFilmes[filme.genero] = 1
+    }
+})
+
+console.table(contagemFilmes)
