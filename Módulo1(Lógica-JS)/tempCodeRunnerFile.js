@@ -1,8 +1,25 @@
-let date1 = new Date(2014, 10, 29)
-let date2 = new Date(2025, 5, 13)
 
-console.log(date1.getTime()) // Da o valor em milisegundos
+let professor = {
+    nome: 'Stark Parker',
+    materia: 'Física',
+    notas: {
+        aluno1: [5, 2, 8],
+        aluno2: [10, 7]
+    }
+}
 
-let milissegundosEntreDatas = Math.abs(date1.getTime() - date2.getTime())
-let milisegundosPorDia = (24 * 60 * 60 * 1000)
-console.log(`A diferença entre as datas por dia é ${(milissegundosEntreDatas/milisegundosPorDia).toFixed(0)}`)
+let somaNotas = 0
+let nrAlunos = 0
+
+for (let aluno in professor.notas) {
+    somaNotas += Array.isArray(professor.notas[aluno]) ? professor.notas[aluno].reduce((acc, nota) => acc + nota, 0)/professor.notas[aluno].length : professor.notas[aluno]
+    nrAlunos++
+}
+
+let mediaProfessor = somaNotas / nrAlunos
+
+if (mediaProfessor > 6) {
+    console.log(`A média do professor é ${mediaProfessor}, ele está acima do padrão`)
+} else {
+    console.log(`A média do professor é ${mediaProfessor}, ele está abaixo do padrão`)
+}
