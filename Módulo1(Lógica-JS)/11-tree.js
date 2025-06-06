@@ -19,14 +19,14 @@ class Tree {
     }
 
     printTree(node = this.root, prefix = '', isLast = true) {
-    console.log(prefix + (isLast ? '└── ' : '├── ') + node.value)
+        console.log(prefix + (isLast ? '└── ' : '├── ') + node.value)
 
-    const childCount = node.children.length
-    node.children.forEach((child, index) => {
-        const isLastChild = index === childCount - 1
-        const newPrefix = prefix + (isLast ? '    ' : '│   ')
-        this.printTree(child, newPrefix, isLastChild)
-    })
+        const childCount = node.children.length
+        node.children.forEach((child, index) => {
+            const isLastChild = index === childCount - 1
+            const newPrefix = prefix + (isLast ? '    ' : '│   ')
+            this.printTree(child, newPrefix, isLastChild)
+        })
     }
 
     traverseDFS(callback) {
@@ -59,24 +59,7 @@ C.addChild(G)
 
 G.addChild(H)
 
-function printNode(node) {
-    console.log(node.value)
-}
-
-/* 
-tree.traverseDFS(printNode)
-A
-B
-E
-F
-C
-G
-H
-D 
-*/
-
 tree.printTree()
-
 /* 
 └── A
     ├── B        
