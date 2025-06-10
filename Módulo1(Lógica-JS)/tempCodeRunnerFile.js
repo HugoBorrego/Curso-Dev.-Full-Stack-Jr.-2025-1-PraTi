@@ -1,17 +1,13 @@
-const prompt = require('prompt-sync')()
+const string = 'olá olá mundo mundo'
+let listaString = string.split(' ')
 
-let numero = Math.floor(Math.random() * 100) + 1
-let tentativas = 0
+let palavrasUnicas = []
 
-do {
-    valorUsuario = parseInt(prompt('Digite um número: '))
-    if (valorUsuario > numero) {
-        console.log('Mais baixo.')
-    } else {
-        console.log('Mais alto.')
+for(let i = 0; i < listaString.length; i++){
+    if(!palavrasUnicas.includes(listaString[i])){
+        palavrasUnicas.push(listaString[i])
     }
-    tentativas++
-} while (numero != valorUsuario)
+}
 
-console.log('Parabéns, você acertou!!')
-console.log('A quantidade de tentativas foi ' + tentativas)
+console.log(palavrasUnicas)
+console.log(listaString)

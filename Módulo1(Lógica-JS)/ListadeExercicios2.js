@@ -38,7 +38,18 @@ console.log('A quantidade de tentativas foi ' + tentativas)
 
 /* 3. Palavras Únicas 
 Dada uma string (ex.: "olá olá mundo mundo"), use if/else e for para extrair todas as palavras únicas e exibi-las em um array. */
+const string = 'olá olá mundo mundo'
+let listaString = string.split(' ')
 
+let palavrasUnicas = []
+
+for(let i = 0; i < listaString.length; i++){
+    if(!palavrasUnicas.includes(listaString[i])){
+        palavrasUnicas.push(listaString[i])
+    }
+}
+
+console.log(palavrasUnicas)
 
 
 // --- Seção 2: Funções e Recursão ---
