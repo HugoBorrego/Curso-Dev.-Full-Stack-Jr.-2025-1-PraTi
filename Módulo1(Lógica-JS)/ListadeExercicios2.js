@@ -4,10 +4,10 @@
 Crie a função ehDataValida(dia, mes, ano) que retorne true se os valores formarem uma data real (meses de 28–31 dias, ano bissexto para fevereiro) e false caso contrário. */
 function ehDataValida(dia, mes, ano) {
     if (ano < 1 || mes < 1 || mes > 12 || dia < 1) {
-        return false;
+        return false
     }
 
-    diasDoMes = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    const diasDoMes = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
     if (mes === 2 && (ano % 4 === 0 && (ano % 100 !== 0 || ano % 400 === 0))) {
         diasDoMes[1] = 29
@@ -16,10 +16,25 @@ function ehDataValida(dia, mes, ano) {
     return dia <= diasDoMes[mes - 1];
 }
 
-
 /* 2. Jogo de Adivinhação
 Escreva um script que gere um número aleatório de 1 a 100 e peça ao usuário, para adivinhar. Use while para repetir até acertar, contando tentativas e exibindo “mais alto” ou “mais baixo” a cada palpite errado. */
+const prompt = require('prompt-sync')()
 
+let numero = Math.floor(Math.random() * 100) + 1
+let tentativas = 0
+
+do {
+    valorUsuario = parseInt(prompt('Digite um número: '))
+    if (valorUsuario > numero) {
+        console.log('Mais baixo.')
+    } else {
+        console.log('Mais alto.')
+    }
+    tentativas++
+} while (numero != valorUsuario)
+
+console.log('Parabéns, você acertou!!')
+console.log('A quantidade de tentativas foi ' + tentativas)
 
 /* 3. Palavras Únicas 
 Dada uma string (ex.: "olá olá mundo mundo"), use if/else e for para extrair todas as palavras únicas e exibi-las em um array. */
@@ -58,9 +73,6 @@ const fastFib = memoize(function fibonacci(n) {
     if (n < 2) return n
     return fastFib(n - 1) + fastFib(n - 2)
 })
-
-console.log(fastFib(25))
-
 
 
 // --- Seção 3: Arrays e Objetos Complexos ---
