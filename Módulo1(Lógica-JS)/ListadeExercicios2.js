@@ -3,8 +3,19 @@
 /* 1. Validação de Datas
 Crie a função ehDataValida(dia, mes, ano) que retorne true se os valores formarem uma data real (meses de 28–31 dias, ano bissexto para fevereiro) e false caso contrário. */
 function ehDataValida(dia, mes, ano) {
-    
+    if (ano < 1 || mes < 1 || mes > 12 || dia < 1) {
+        return false;
+    }
+
+    diasDoMes = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+    if (mes === 2 && (ano % 4 === 0 && (ano % 100 !== 0 || ano % 400 === 0))) {
+        diasDoMes[1] = 29
+    }
+
+    return dia <= diasDoMes[mes - 1];
 }
+
 
 /* 2. Jogo de Adivinhação
 Escreva um script que gere um número aleatório de 1 a 100 e peça ao usuário, para adivinhar. Use while para repetir até acertar, contando tentativas e exibindo “mais alto” ou “mais baixo” a cada palpite errado. */
