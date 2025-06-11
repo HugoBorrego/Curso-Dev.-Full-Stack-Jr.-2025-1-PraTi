@@ -126,7 +126,19 @@ function nomesOrdenadosPorPreco(produtos) {
 
 /* 8. Agrupamento por Propriedade
 Em vendas = [{ cliente, total }, ...], use reduce para gerar um objeto onde cada chave é um cliente e o valor é a soma de todos os seus total. */
+let vendas = [
+    {
+        cliente: String,
+        total: Number
+    }
+]
 
+function agruparPorCliente(vendas) {
+    return vendas.reduce((acc, { cliente, total }) => {
+        acc[cliente] = (acc[cliente] || 0) + total
+        return acc;
+    }, {})
+}
 
 /* 9. Conversão Entre Formatos
 Escreva duas funções:

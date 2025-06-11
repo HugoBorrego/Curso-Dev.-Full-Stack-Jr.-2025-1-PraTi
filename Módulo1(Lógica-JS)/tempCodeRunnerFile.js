@@ -1,17 +1,16 @@
-
-function nomesOrdenadosPorPreco(produtos) {
-    let copia = produtos.slice()
-    copia.sort((a, b) => a.preco - b.preco)
-
-    let nomes = copia.map(prod => prod.nome)
-
-    return nomes
+function agruparPorCliente(vendas) {
+    return vendas.reduce((acc, { cliente, total }) => {
+        acc[cliente] = (acc[cliente] || 0) + total;
+        return acc;
+    }, {});
 }
 
-let produtos = [
-    { nome: 'Celular', preco: 4000 },
-    { nome: 'Notebook', preco: 5000 },
-    { nome: 'Caderno', preco: 30 }
-]
+// Exemplo de uso
+const vendas = [
+    { cliente: "Alice", total: 150 },
+    { cliente: "Bob", total: 200 },
+    { cliente: "Alice", total: 50 },
+    { cliente: "Bob", total: 100 }
+];
 
-console.log(nomesOrdenadosPorPreco(produtos))
+console.log(agruparPorCliente(vendas));
