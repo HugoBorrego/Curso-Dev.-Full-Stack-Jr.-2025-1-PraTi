@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- Colocar "pt-br" -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Desenvolvimento Web, HTML, CSS, JavaScript">
+    <!-- Palavras chaves para o vetor de busca -->
+    <meta name="autor" content="Hugo"> <!-- Autor do código -->
+    <title>Aprendendo Programação Web</title> <!-- Título da Página -->
+
+    <style>
+        table {
+            border: 1px solid black;
+        }
+
+        th, td {
+            border: 1px solid ;
+        }
+
+        a {
+            font-weight: bold; /* Fonte em negrito */
+            color: green; /* Cor verde */
+            border: 1px solid; /* Borda de 1 pixel sólida */
+            text-decoration: none; /* Tirando o sublinhado */
+        }
+
+        ul {
+            list-style: square; /* Colocando pontos quadrados na lista não enumerada */
+            border: 1px dashed; /* Colocando borda pontilhada */
+        }
+    </style>
+</head>
+
+<body>
+    <header> <!-- Cabeçalho -->
+        <nav> <!-- Navegação -->
+            <a href="home.html">Home</a> <!-- Navegação de links -->
+            <a href="sobre.html">Sobre Mim</a>
+        </nav>
+
+        <h1>Aprendendo Programação Web</h1> <!-- Títulos e seus tamanhos -->
+        <h2>Aprendendo Programação Web</h2>
+        <h3>Aprendendo Programação Web</h3>
+        <h4>Aprendendo Programação Web</h4>
+    </header>
+
+    <hr> <!-- Linha horizantal para separar -->
+
+    <section> <!-- Seção -->
+        <p>Aprendendo programação web no curso da +PraTi</p> <!-- Parágrafos -->
+        <p>Por enquanto so estamos vendo HTML</p>
+        <p>Aqui esta um código de uma função <code>&lt; function soma(a, b) { return a + b } <!-- Código dentro do parágrafo --></code></p>
+        <p>Essa palavra esta <sub>subscrita</sub> e essa <sup>sobrescrita</sup></p>
+    </section>
+
+    <hr>
+
+    <section>
+        <p>
+            O significado da sigla <abbr title="JavaScrit Object Notation">JSON</abbr>
+        </p>
+        <blockquote cite="https://google.com"> <!-- Estilo de citação -->
+            Esse é o site do Google
+        </blockquote>
+
+        <p>Como um bom investidor sempre fala: <q>Compre na Baixa e Venda na Alta</q></p> <!-- Para adcionar uma frase -->
+
+        <p>Essa palavra está em <strong>Negrito</strong>, essa está <s>Tachada</s>, essa está <em>Itálica</em> e essa está <u>Sublinhada</u></p> <!-- Palavra em negrito, tachado, itálico e sublinhado </section> -->
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Menu principal</h2> <!-- Lista não enumerada -->
+        <ul>
+            <li>Home</li>
+            <li>Sobre</li>
+        </ul>
+        
+        <h3>Perguntas Frequentes</h3> <!-- Lista enumerada -->
+        <ol>
+            <li>O que é HTML?</li>
+            <li>Qual função do HTML na programação?</li>
+        </ol>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Catálogo de Preços</h2>
+        <table> <!-- Tabela -->
+            <tr> <!-- Primeira linha da tabela -->
+                <th>Produto</th> <!-- Table Header - linha do cabeçalho da tabela -->
+                <th>Descrição</th>
+                <th>Preço</th>
+            </tr>
+            <tr>
+                <td>Acer NitroV15</td> <!-- Table Data - linha dos dados -->
+                <td>Computador Gamer</td>
+                <td>R$ 4.500,00</td>
+            </tr>
+            <tr>
+                <td>Iphone 16</td>
+                <td>Celular da Apple</td>
+                <td>R$ 5.700,00</td>
+            </tr>
+            <tr>
+                <td colspan="3">Total: R$ 10.200,00</td>
+            </tr>
+        </table>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Registro de Usuários</h2>
+        <form>
+            <label>Login:</label>
+            <input type="text">
+            <br> <!-- Brake Row - Quebra de Linha -->
+            <br>
+            <label>Senha:</label>
+            <input type="password">
+        </form>
+    </section>
+
+    <hr>
+
+    <footer>
+        <h3>Rodapé</h3>
+        <p>Desenvolvido por Hugo &copy; 2025</p>
+    </footer>
+</body>
+
+</html>
