@@ -1,13 +1,17 @@
-const string = 'olá olá mundo mundo'
-let listaString = string.split(' ')
 
-let palavrasUnicas = []
+function nomesOrdenadosPorPreco(produtos) {
+    let copia = produtos.slice()
+    copia.sort((a, b) => a.preco - b.preco)
 
-for(let i = 0; i < listaString.length; i++){
-    if(!palavrasUnicas.includes(listaString[i])){
-        palavrasUnicas.push(listaString[i])
-    }
+    let nomes = copia.map(prod => prod.nome)
+
+    return nomes
 }
 
-console.log(palavrasUnicas)
-console.log(listaString)
+let produtos = [
+    { nome: 'Celular', preco: 4000 },
+    { nome: 'Notebook', preco: 5000 },
+    { nome: 'Caderno', preco: 30 }
+]
+
+console.log(nomesOrdenadosPorPreco(produtos))

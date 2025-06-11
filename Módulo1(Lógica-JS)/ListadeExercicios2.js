@@ -56,11 +56,29 @@ console.log(palavrasUnicas)
 
 /* 4. Fatorial Recursivo
 Implemente function fatorial(n) de forma recursiva; trate n < 0 lançando um Error, e n === 0 retornando 1. */
+function fatorial(n) {
+    if (n < 0) {
+        throw new Error("Não é possível fazer o fatorial para números negativos.");
+    }
 
+    if (n === 0) {
+        return 1
+    } return n * fatorial(n - 1)
+}
 
 /* 5. Debounce
 Crie function debounce(fn, delay) que receba uma função fn e um delay em ms, retornando uma nova função que só executa fn se não for chamada novamente dentro do intervalo. */
+function debounce(fn, delay) {
+    let timer = null
 
+    return function (...args) {
+        clearTimeout(timer)
+
+        timer = setTimeout(() => {
+            fn.apply(this, args)
+        }, delay)
+    }
+}
 
 /* 6. Memoization
 Implemente function memoize(fn) que armazene em cache chamadas anteriores de fn (por argumentos), retornando resultados instantâneos em repetidas invocações. */
@@ -90,7 +108,21 @@ const fastFib = memoize(function fibonacci(n) {
 
 /* 7. Mapeamento e Ordenação
 Dado um array produtos = [{ nome, preco }, ...], crie uma função que retorne um novo array apenas com os nomes, ordenados por preço crescente, usando map, sort. */
+let produtos = [
+    {
+        nome: String,
+        preco: Number
+    }
+]
 
+function nomesOrdenadosPorPreco(produtos) {
+    let copia = produtos.slice()
+    copia.sort((a, b) => a.preco - b.preco)
+
+    let nomes = copia.map(prod => prod.nome)
+
+    return nomes
+}
 
 /* 8. Agrupamento por Propriedade
 Em vendas = [{ cliente, total }, ...], use reduce para gerar um objeto onde cada chave é um cliente e o valor é a soma de todos os seus total. */
