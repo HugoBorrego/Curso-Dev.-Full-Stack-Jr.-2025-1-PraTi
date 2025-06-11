@@ -144,3 +144,18 @@ function agruparPorCliente(vendas) {
 Escreva duas funções:
 - ○ paresParaObjeto(pares) recebe um array de pares [ [chave, valor], ... ] e retorna o objeto equivalente.
 - ○ objetoParaPares(obj) faz o inverso, retornando um array de pares. */
+function paresParaObjeto(pares) {
+    return Object.fromEntries(pares)
+}
+
+function objetoParaPares(obj) {
+    return Object.entries(obj)
+}
+
+let pares = [["nome", "Hugo"], ["idade", 23], ["cidade", "Taubaté"]]
+
+let objeto = paresParaObjeto(pares)
+console.log(objeto)
+
+let novoPares = objetoParaPares(objeto)
+console.log(novoPares) 

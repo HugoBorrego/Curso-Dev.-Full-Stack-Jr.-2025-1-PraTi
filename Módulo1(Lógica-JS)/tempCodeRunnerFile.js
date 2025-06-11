@@ -1,16 +1,15 @@
-function agruparPorCliente(vendas) {
-    return vendas.reduce((acc, { cliente, total }) => {
-        acc[cliente] = (acc[cliente] || 0) + total;
-        return acc;
-    }, {});
+function paresParaObjeto(pares) {
+    return Object.fromEntries(pares)
 }
 
-// Exemplo de uso
-const vendas = [
-    { cliente: "Alice", total: 150 },
-    { cliente: "Bob", total: 200 },
-    { cliente: "Alice", total: 50 },
-    { cliente: "Bob", total: 100 }
-];
+function objetoParaPares(obj) {
+    return Object.entries(obj)
+}
 
-console.log(agruparPorCliente(vendas));
+let pares = [["nome", "Hugo"], ["idade", 23], ["cidade", "Taubaté"]]
+
+let objeto = paresParaObjeto(pares)
+console.log(objeto)
+
+let novoPares = objetoParaPares(objeto)
+console.log(novoPares) 
