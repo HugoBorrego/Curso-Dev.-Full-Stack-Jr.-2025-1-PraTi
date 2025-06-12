@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula de Formulários e Inputs</title>
+
+    <style>
+        body {
+            background-color: #d6f8d6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Alinha horizontalmente */
+            align-items: center; /* Alinha verticalmente */
+            height: 100vh; /* Visão de toda a página, aplica responsividade */
+        }
+
+        #form-conteiner {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px black;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px; /* Margem para baixo */
+        }
+
+        label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        input {
+            padding: 5px;
+            margin-bottom: 5px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+
+        .input-group .radio-group, .input-group .checkbox-group {
+            margin-bottom: 15px;
+            display: flex;
+            gap: 10px;
+            
+
+            label {
+                margin-bottom: 5px;
+            }
+        }
+
+        button {
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: gray;
+        }
+
+        input, select, textarea, button {
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="form-conteiner" style="border: 1px solid black;">
+        <h2>Formulário de Cadastro</h2>
+
+        <form>
+            <div class="input-group">
+                <label>Nome:</label>
+                <input type="text" placeholder="Digite seu nome">
+            </div>
+            <div class="input-group">
+                <label>Telefone:</label>
+                <input type="text" placeholder="Digite seu telefone">
+            </div>
+            <div class="input-group">
+                <label>E-mail:</label>
+                <input type="text" placeholder="Digite seu e-mail">
+            </div>
+            <div class="input-group">
+                <label>Senha:</label>
+                <input type="password" placeholder="Digite sua senha">
+            </div>
+            <div class="input-group">
+                <label>Web Site:</label>
+                <input type="url" placeholder="Digite a url do site">
+            </div>
+            <div class="input-group">
+                <label>Data de Nascimento:</label>
+                <input type="date">
+            </div>
+            <div class="input-group">
+                <label>Hora</label>
+                <input type="time">
+            </div>
+            <div class="input-group">
+                <label>Pesquisa:</label>
+                <input type="search" placeholder="Digite sua pesquisa">
+            </div>
+            <div class="input-group">
+                <label>Quantidade:</label>
+                <input type="number" placeholder="Digite a quantidade">
+            </div>
+
+            <div class="input-group">
+                <label>Gênero:</label>
+                <div class="radio-group">
+                    <label for="male">
+                        <input type="radio" value="male" name="gender">Masculino
+                    </label>
+                    <label for="female">
+                        <input type="radio" value="female" name="gender">Feminino
+                    </label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Preferências:</label>
+                <div class="checkbox-group">
+                    <label for="newsletter">
+                        <input type="checkbox" name="newsletter">Assinar a Newsletter
+                    </label>
+                    <label for="update">
+                        <input type="checkbox" name="updates">Receber atualizações
+                    </label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="resume">Carregar Currículo:</label>
+                <input type="file" name="resume">
+            </div>
+            
+            <div class="input-group">
+                <label for="city">Selecione sua Cidade:</label>
+                <select name="city">
+                    <option value="sp">São Paulo</option>
+                    <option value="sp">Taubaté</option>
+                    <option value="sp">São José dos Campos</option>
+                    <option value="sp">Pindamonhagaba</option>
+                    <option value="sp">Tremembé</option>
+                    <option value="sp">Guaratinguetá</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="message">Mensagem:</label>
+                <textarea name="message" placeholder="Deixe sua Mensagem"></textarea>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+
+</html>
