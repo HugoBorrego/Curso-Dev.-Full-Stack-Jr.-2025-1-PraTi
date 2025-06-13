@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com Links, Imagens e Mídia</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <p>
+                Visite meu site <a href="https://hugoborrego.github.io/Site-de-Investimentos/" target="_blank"
+                    rel="noopener noreferer">RiquezaOnline</a> para saber dos seus investimentos.
+                <!-- Sempre utilizar o target="_blank" para abrir outra aba e também rel="noopener noreferer" para não permitir entrada de código malifiosos -->
+            </p>
+        </section>
+
+        <section>
+            <figure> <!-- Sem recursividade -->
+                <img src="assets/FernandodeNoronha.jpg" alt="Fernando de Noronha" width="300">
+                <figcaption>
+                    Figura 1: Praia de Fernando de Noronha</figcaption>
+            </figure>
+
+            <figure>
+                <picture>
+                    <source media="(min-width: 480px)" srcset="assets/PC_Gamer.jpg">
+
+                    <img src="assets/PC_Gamer.jpg" alt="Pc Gamer" width="300"> <!-- Aqui o tamanho da imagem muda se estiver em uma tela de celular -->
+                </picture>
+            </figure>
+        </section>
+
+        <section>
+            <iframe width="300" height="200" src="https://www.youtube.com/watch?v=wGnfjaRhcsg&list=WL&index=105" frameborder="0"></iframe>
+
+            <video src="" type="video/mp4"></video>
+            <audio src="" type="audio/ogg"></audio>
+        </section>
+
+    </main>
+</body>
+
+</html>
