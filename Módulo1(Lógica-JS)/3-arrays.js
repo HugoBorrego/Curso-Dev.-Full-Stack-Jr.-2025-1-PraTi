@@ -87,3 +87,38 @@ listaCoisas['Hardware'][1] = 'Smartwatch'
 listaCoisas['Games'] = ['GTA VI']
 listaCoisas['Games'][1] = 'The Witcher'
 console.table(listaCoisas)
+
+
+/*
+📌 Métodos de Array em JavaScript 📌
+
+🔹 push() - Adiciona elementos ao final do array.
+🔹 pop() - Remove o último elemento.
+🔹 shift() - Remove e retorna o primeiro elemento.
+🔹 unshift() - Adiciona elementos no início do array.
+🔹 concat() - Combina dois ou mais arrays.
+🔹 slice() - Retorna uma cópia de parte do array.
+🔹 splice() - Adiciona, remove ou substitui elementos.
+🔹 indexOf() - Retorna o primeiro índice de um elemento.
+🔹 lastIndexOf() - Retorna o último índice de um elemento.
+🔹 includes() - Verifica se o array contém um elemento.
+🔹 find() - Retorna o primeiro elemento que satisfaz uma condição.
+🔹 findIndex() - Retorna o índice do primeiro elemento que passa em um teste.
+🔹 forEach() - Executa uma função em cada elemento.
+🔹 map() - Cria um novo array com os resultados de uma função.
+🔹 filter() - Cria um novo array com elementos que passam em um teste.
+🔹 reduce() - Reduz o array a um único valor.
+🔹 reduceRight() - Reduz o array da direita para a esquerda.
+🔹 some() - Verifica se ao menos um elemento satisfaz uma condição.
+🔹 every() - Verifica se todos os elementos satisfazem uma condição.
+🔹 sort() - Organiza os elementos do array.
+🔹 reverse() - Inverte a ordem dos elementos.
+🔹 join() - Junta os elementos em uma string.
+🔹 toString() - Converte o array para uma string.
+🔹 fill() - Preenche o array com um valor.
+🔹 copyWithin() - Copia parte do array para outra posição.
+🔹 flat() - Achata sub-arrays até uma profundidade.
+🔹 flatMap() - Mapeia e achata o resultado em um novo array.
+🔹 isArray() - Verifica se o valor é um array, retornando true ou false.
+*/
+
