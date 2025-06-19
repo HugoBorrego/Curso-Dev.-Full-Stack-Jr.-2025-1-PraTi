@@ -1,0 +1,54 @@
+#Cabeçalho {
+    background-color: black;
+    color: white;
+    padding: 8px; /* Tamanho do fundo */
+}
+
+h1 {
+    color: #1a801ffd;
+}
+
+p {
+    color: blueviolet;
+    line-height: 1.2; /* Distancia das linhas */
+}
+
+.destaque {
+    color: yellow;
+    background-color: rgb(37, 93, 150);
+}
+
+ul li {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+ul li.importante {
+    color: red;
+}
+
+a:hover {
+    text-decoration: none;
+    color: green;
+    /* Quando coloca o mouse em cima fica verde */
+}
+
+div {
+    margin: 10px;
+    border: 1px solid blue;
+}
+
+div p {
+    border: inherit; /* O elemento inherit é para assumir a mesma borda do elemento pai */
+}
+
+h2 + p {
+    color: red;
+}
+
+h2 ~ p {
+    font-style: italic;
+}
+
+h4 > a {
+    color: rgb(53, 53, 53);
+}
