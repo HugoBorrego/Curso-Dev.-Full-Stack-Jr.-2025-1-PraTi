@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    background-color: white;
+    color: #333;
+    display: flex; /* Display de forma a ficar um do lado do outro */
+}
+
+aside { /* Menu que fica do lado esquerdo */
+    width: 200px;
+    background-color: #259909;
+    color: white;
+    padding: 20px; /* Espaço a esqueda de 20px */
+    height: 100vh;
+}
+
+aside h2 {
+    font-size: 20px;
+    border-bottom: 1px solid #435b72; /* Borda somente na parte de baixo */
+    padding-bottom: 10px; /* Distancia da borda de baixo e do menu */
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin: 15px 0; /* Dando um espaço de 15px de cada linha e deixando a margem a esqueda em zero */
+}
+
+main {
+    flex: 1;
+    padding: 30px;
+}
+
+h1 {
+    margin-top: 0;
+}
+
+table {
+    width: 100%;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+}
+
+thead { /* Cabeçalho da tabela */
+    background-color: #035c97;
+    color: white;
+}
+
+thead th { /* Cabeçalho da tabela */
+    text-align: left;
+    padding: 12px;
+    font-size: 16px;
+}
+
+tbody td { /* Parte dos dados da tabela */
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover { /* Parte dos dados da tabela quando passa por cima fica em um tom azul */
+    background-color: #2980b9;
+}
+
+/* Mostrando os diferentes tipos de status e como eles ficam(sua cor) */
+.status-ok {
+    color: green;
+    font-weight: bold;
+}
+
+.status-pending {
+    color: orange;
+    font-weight: bold;
+}
+
+.status-cancelado {
+    color: red;
+    font-weight: bold;
+}
