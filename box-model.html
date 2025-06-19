@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model - Dimensões</title>
+
+    <style>
+        div {
+            border: 1px solid black;
+        }
+
+        h2 {
+            border: inherit;
+            width: 300px; /* Largura do bloco */
+            height: 80px; /* Altura do bloco */
+            padding: 10px; /* Espaço do texto e as bordas do bloco */
+            margin: 10px; /* Espaço do bloco e outro bloco externo */
+
+            /* largura total = width + (padding * 2) + (border * 2) = 322 */
+            /* altura total = height + (padding * 2) + (border * 2) = 102 */
+
+            box-sizing: border-box; /* Isso faz com que o tamanho seja somente o valor do width */
+        }
+
+        div.dimensions h2 {
+            border: inherit;
+            height: 10pc;
+            width: 50%;
+            font-size: 4vmin; /* O tamanho da fonte muda com o tamanho da tela */
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Conteúdo de teste</h2>
+    </div>
+
+    <div class="dimensions">
+        <h2>Conteúdo de teste de Dimensões</h2>
+    </div>
+</body>
+</html>
