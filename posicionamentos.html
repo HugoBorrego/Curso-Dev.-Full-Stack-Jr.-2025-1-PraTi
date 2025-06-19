@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posicionamentos</title>
+
+    <style>
+        .caixa {
+            width: 200px;
+            height: 100px;
+            background-color: lightgrey;
+            margin-bottom: 20px;
+        }
+
+        .static {
+            position: static;
+            background-color: lightgreen;
+        }
+
+        .relative {
+            position: relative;
+            top: 20px;
+            left: 60px;
+            /* Deslocando a caixa */
+        }
+
+        .pai {
+            position: relative;
+            width: 250px;
+            height: 150px;
+            background-color: lightblue;
+            top: 20px;
+        }
+
+        .absolute {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 80px;
+            height: 50px;
+            background-color: brown;
+        }
+
+        .fixed {
+            position: fixed;
+            bottom: 300px;
+            left: 20px;
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        .conteudo {
+            height: 100vh;
+            padding: 20px;
+        }
+        
+        .Stick {
+            position: sticky;
+            top: 0; /* Ele vai descer o título até grudar no texto e o view port máximo a observar */
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="caixa">Caixa</div>
+
+    <div class="caixa static">Caixa Static</div> <!-- É estática, não se pode desloca-la -->
+
+    <div class="caixa relative">Caixa Relativa</div> <!-- Pode ser deslocada -->
+
+    <div class="pai">
+        <div class="absolute">Caixa Absoluta</div> <!-- Ele é relativo a pai mas se sobrepõe ao resto -->
+    </div>
+
+    <div class="fixed">Botão Fixo</div> <!-- Ele fica fixo na tela mesmo descendo e subindo a página -->
+
+    <div class="conteudo">
+        <h2 class="Stick">Texto Base</h2>
+        <p>A importância de estar sempre aprendendo está no fato de que o conhecimento pode ser útil quando menos se espera.  A importância de estar sempre aprendendo está no fato de que o conhecimento pode ser útil quando menos se espera.  A importância de estar sempre aprendendo está no fato de que o conhecimento pode ser útil quando menos se espera.  A importância de estar sempre aprendendo está no fato de que o conhecimento pode ser útil quando menos se espera.  A importância de estar sempre aprendendo está no fato de que o conhecimento pode ser útil quando menos se espera.  A importância de estar sempre aprendendo está no fato de que o conhecimento pode ser útil quando menos se espera.  A importância de estar sempre aprendendo está no fato de que o conhecimento pode ser útil quando menos se espera.  A importância de estar sempre aprendendo está no fato de que o conhecimento pode ser útil quando menos se espera.</p>
+    </div>
+
+</body>
+
+</html>
