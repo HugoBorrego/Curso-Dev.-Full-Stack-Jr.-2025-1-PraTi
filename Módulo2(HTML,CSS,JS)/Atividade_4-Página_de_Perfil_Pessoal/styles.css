@@ -1,29 +1,382 @@
 body {
-    background-color: white;
+  margin: 0;
+  background-color: #ccc;
 }
 
 header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border: 1px solid;
-    background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  padding: 15px 30px;
+}
+
+.logo img {
+  max-width: 100%;
 }
 
 .nome {
-    font-size: 25px;
-    color: white;
+  flex-grow: 1;
+  text-align: center;
+  margin: 10px 0;
 }
 
-img {
-    width: 100px;
-    height: 100px;
+.nome h2 {
+  margin: 0;
+  font-size: 24px;
 }
+
+.nome h4 {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #8a8a8a;
+}
+
+.navegacao {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
 
 nav a {
-    text-decoration: none;
-    margin: 0 6px;
-    color: white;
-    font-weight: bold;
+  color: white;
+  text-decoration: none;
+  margin: 0 6px;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #8a8a8a;
+}
+
+/* Celulares */
+@media screen and (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .logo img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .navegacao {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .nome h2 {
     font-size: 20px;
+  }
+
+  .nome h4 {
+    font-size: 12px;
+  }
+}
+
+/* Tablets */
+@media screen and (min-width: 601px) and (max-width: 900px) {
+  header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .navegacao {
+    justify-content: center;
+  }
+
+  .nome h2 {
+    font-size: 22px;
+  }
+
+  .nome h4 {
+    font-size: 13px;
+  }
+}
+
+/* Notebooks e PCs */
+@media screen and (min-width: 901px) {
+  header {
+    flex-wrap: nowrap;
+  }
+
+  .navegacao {
+    justify-content: flex-end;
+  }
+}
+
+
+
+.layout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+aside {
+  width: 250px;
+  color: white;
+  background-color: black;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 17px;
+
+  ul li a {
+    color: #ccc;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #8a8a8a;
+  }
+}
+
+main {
+  flex: 1;
+  background-color: #ccc;
+  padding: 15px;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  aside {
+    width: 90%;
+  }
+}
+
+.texto p {
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+  font-size: 17px;
+}
+
+.sobre-mim {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+  background-color: #5e31ff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.sobre-mim .texto {
+  flex: 1;
+  min-width: 250px;
+}
+
+.sobre-mim .imagem img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .sobre-mim {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-mim .imagem {
+    margin-top: 15px;
+  }
+}
+
+.habilidades {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #00ff15;
+  border-radius: 8px;
+}
+
+.habilidades .linguagens {
+  flex: 1;
+}
+
+.habilidades .linguagens ul {
+  list-style: none;
+  padding: 0;
+}
+
+.habilidades .linguagens ul li {
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+.habilidades .imagem {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.habilidades .imagem img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .habilidades {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+.projetos {
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background-color: aqua;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.projeto {
+  width: 30%;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.projetos h2 {
+  width: 100%;
+}
+
+.projetos p {
+  width: 100%;
+  font-size: 17px;
+}
+
+.projeto img {
+  width: auto;
+  height: 100px;
+  border-radius: 5%;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .projetos {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .projeto {
+    width: 90%;
+  }
+}
+
+
+.contato {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.interface {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+  background-color: red;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  background-color: #8a0000;
+  border: 0;
+  outline: 0;
+  padding: 20px 15px;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+form textarea {
+  resize: vertical;
+  max-height: 250px;
+}
+
+form .enviar {
+  margin-top: 20px;
+  text-align: center;
+}
+
+form .enviar input {
+  width: 140px;
+  background-color: #8a0000;
+  color: black;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+footer {
+  background-color: #000000;
+  padding: 15px;
+}
+
+footer p {
+  font-size: 14px;
+  color: white;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .contato {
+    padding: 30px 15px;
+  }
+
+  form {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  form input,
+  form textarea {
+    font-size: 16px;
+    padding: 16px 12px;
+  }
+
+  form .enviar input {
+    width: 100%;
+    padding: 14px;
+  }
 }

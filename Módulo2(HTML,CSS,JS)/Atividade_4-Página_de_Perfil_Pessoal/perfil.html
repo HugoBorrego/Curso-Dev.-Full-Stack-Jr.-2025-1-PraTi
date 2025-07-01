@@ -11,37 +11,138 @@
 <body>
     <header>
         <div class="logo">
-            <img src="assests/LogoPerfil.png" alt="Logo de perfil">
+            <img src="assests/LogoPerfil.png" alt="Logo de perfil" width="80">
         </div>
         <div class="nome">
             <h2>Hugo A. Borrego</h2>
+            <h4>Desenvolvedor | Programador</h4>
         </div>
-        <nav>
-            <a href="#" onclick="showSection('sobre')">Sobre</a>
-            <a href="#" onclick="showSection('habilidades')">Habilidades</a>
-            <a href="#" onclick="showSection('projetos')">Projetos</a>
-            <a href="#" onclick="showSection('contato')">Contato</a>
-        </nav>
+        <div class="navegação">
+            <nav>
+                <a href="#sobre" onclick="showSection('sobre')">Sobre</a>
+                <a href="#habilidades" onclick="showSection('habilidades')">Habilidades</a>
+                <a href="#projetos" onclick="showSection('projetos')">Projetos</a>
+                <a href="#contato" onclick="showSection('contato')">Contato</a>
+            </nav>
+        </div>
     </header>
 
-    <section id="sobre">
+    <div class="layout">
+        <aside>
+            <h2>Links | Redes Sociais</h2>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/hugoaborrego/" target="_blank">Linkedin</a></li>
+                <li><a href="https://github.com/HugoBorrego" target="_blank">Github</a></li>
+                <li><a href="https://hugoborrego.github.io/Portfolio_Pessoal/" target="_blank">Portfólio</a></li>
+            </ul>
+        </aside>
 
-    </section>
+        <main>
+            <section id="sobre" class="sobre-mim">
+                <div class="texto">
+                    <h2>Sobre mim</h2>
+                    <p>
+                        Sou apaixonado por tecnologia, estudo de Análise e Desenvolvimento de Sistemas na Fatec,
+                        com grande interesse em Desenvolvimento Full Stack e Ciência de Dados.
+                    </p>
+                    <p>
+                        Sou comunicativo, trabalhador e proativo. Tenho facilidade em trabalhar em equipe e geralmente
+                        adoto
+                        posturas de liderança caso necessário. Me interesso em desenvolvimento de software, ciência de
+                        dados
+                        e inteligência artificial. Investindo regularmente em cursos e treinamentos para aprimorar
+                        minhas
+                        habilidades. Possuo paixão por tecnologia e constante busca por novos conhecimentos. Gosto de
+                        viver
+                        de forma equilibrada. Trabalho, estudo e sempre busco aprender algo novo. Nos momentos livres,
+                        adoro
+                        viajar, curtir a praia e manter o corpo e a mente ativos na academia.
+                    </p>
+                </div>
+                <div class="imagem">
+                    <img src="assests/Sobremim.jpg" alt="Foto desenho" width="250">
+                </div>
 
-    <section id="habilidades">
+            </section>
 
-    </section>
+            <section id="habilidades" class="habilidades">
+                <div class="linguagens">
+                    <h2>Habilidades</h2>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>Node.js</li>
+                        <li>Python</li>
+                        <li>Java</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="imagem">
+                    <img src="assests/Tecnologias.png" alt="Tecnologias" width="250">
+                </div>
+            </section>
 
-    <section id="projetos">
+            <section id="projetos">
+                <div class="projetos">
+                    <h2>Projetos</h2>
 
-    </section>
+                    <div class="projeto">
+                        <h4>Site TechVet</h4>
+                        <a href="https://techvet.onrender.com" target="_blank"><img src="assests/TechVet.png"></a>
+                        <p>
+                            Projeto de uma Clínica Veterinária chamada TechVet, foi usado Figma, HTML, CSS, JS, Java
+                            SpringBoot, PostgreSQL
+                        </p>
+                    </div>
 
-    <section id="contato">
+                    <div class="projeto">
+                        <h4>Jogo 2D em Java</h4>
+                        <a href="https://github.com/HugoBorrego/Jogo_em_Java" target="_blank"><img
+                                src="assests/Jogo2D.png"></a>
+                        <p>
+                            Fiz um jogo em java que tem uma nave no espaço que atira e tem que desviar das naves
+                            inimigas
+                        </p>
 
-    </section>
+                    </div>
+
+                    <div class="projeto">
+                        <h4>Site de Investimentos</h4>
+                        <a href="https://hugoborrego.github.io/Site-de-Investimentos/" target="_blank"><img
+                                src="assests/SiteRiquezaOnline.png" alt="RiquezaOnline">
+                        </a>
+                        <p>
+                            Fiz um site de investimentos completamente do zero utilizando meus conhecimentos em HTML,
+                            CSS e JavaScript
+                        </p>
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="contato">
+                <div class="contato">
+                    <h2>Contato</h2>
+                    <div class="interface">
+                        <form action="https://api.staticforms.xyz/submit" method="post" class="card">
+                            <input type="hidden" name="accessKey" value="a0b7f734-e5ca-4051-bd0e-0a1b69e905de">
+                            <input type="text" name="name" id="" placeholder="Nome completo:" required>
+                            <input type="text" name="email" id="" placeholder="E-mail:" required>
+                            <input type="text" name="subject" id="" placeholder="Assunto:" required>
+                            <textarea name="message" id="" placeholder="Mensagem" required></textarea>
+                            <div class="enviar"><input type="submit" value="ENVIAR"></div>
+                            <input type="hidden" name="redirectTo"
+                                value="https://hugoborrego.github.io/Portfolio_Pessoal/">
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <footer>
-
+        <p>&copy; 2025 Hugo Borrego</p>
     </footer>
 
 </body>
