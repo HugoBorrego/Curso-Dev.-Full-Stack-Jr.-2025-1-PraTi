@@ -36,6 +36,7 @@ form {
     flex: 1;
     padding: 0.5rem;
     border: 1px solid #575757;
+    border-radius: 8px;
     background-color: #575757;
     color: black;
 }
@@ -64,12 +65,12 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem;
-    border-bottom: 1px solid #444;
+    padding: 0.5rem;
+    border-radius: 8px;
 }
 
 li:nth-child(odd) {
-    background-color: #222222;
+    background-color: #696969;
 }
 
 .limpar {
