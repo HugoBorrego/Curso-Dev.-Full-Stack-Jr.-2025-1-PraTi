@@ -3,6 +3,12 @@ const inputItem = document.getElementById('input-item')
 const listaItens = document.getElementById('lista-itens')
 const btnLimpar = document.getElementById('btn-limpar')
 
+const filtroStatus = document.getElementById('filtro-status')
+const ordenar = document.getElementById('ordenar')
+const contadorTotal = document.getElementById('contador-total')
+const contadorPendente = document.getElementById('contador-pendente')
+const contadorComprado = document.getElementById('contador-comprado')
+
 let itens = []
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -18,13 +24,36 @@ function salvarDados() {
 }
 
 function renderizarLista() {
+
+    let exibicao = [...itens]
+    const status = filtroStatus.value
+
+    if(status === 'pending') exibicao.filter(i => !i.purchased)
+    if (status === 'purchased') exibicao.filter(i => !i.purchased)
+    
+    if (ordenar.value === 'alphabetical') {
+        exibicao.sort((a, b) => a.text.localeCompare(b.text))
+    } else if (ordenar.value === 'status') {
+        exibicao.sort((a, b) => a.purchased - b.purchased)
+    }
+    
     listaItens.innerHTML = ''
-    itens.forEach((item, index) => {
+    exibicao.forEach((item, index) => {
+        
         const li = document.createElement('li')
 
         const span = document.createElement('span')
         span.textContent = item
 
+        const btnToggle = document.createElement('button')
+        btnToggle.textContent = item.purchased ? 'Marcar Pendente' : 'Marcar Comprado'
+        btnToggle.addEventListener('click', () => {
+            item.purchased = !item.purchased
+            salvarDados()
+            renderizarLista()
+        })
+        li.appendChild(btnToggle)
+        
         const btnRemover = document.createElement('button')
         btnRemover.textContent = 'X'
         btnRemover.title = 'Remover Item'
@@ -36,7 +65,14 @@ function renderizarLista() {
         li.append(span, btnRemover)
         listaItens.appendChild(li)
     })
+
+    contadorTotal.textContent = `Total: ${itens.length}`
+    contadorPendente.textContent = `Pendentes: ${itens.filter(i => !i.purchased).length}`
+    contadorComprado.textContent = `Comprados: ${itens.filter(i => !i.purchased).length}`
 }
+
+filtroStatus.addEventListener('change', renderizarLista)
+ordenar.addEventListener('change', renderizarLista)
 
 formAdicionar.addEventListener('submit', (event) => {
     event.preventDefault()
@@ -63,10 +99,3 @@ btnLimpar.addEventListener('click', () => {
         removerItem()
     }
 })
-
-// Funcionalidades:
-
-// Marcar como comprado - Salvar esse Estado no localStorage
-// Contador de Itens - Mostrar quantos itens tem na lista, atualizando em tempo real
-// Adicione filtros para itens 'comprados' e 'pedentes'
-// Permita ordenar alfabeticamente ou por status

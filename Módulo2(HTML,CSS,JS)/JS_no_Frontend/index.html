@@ -19,6 +19,24 @@
         <ul id="lista-itens"></ul>
 
         <button class="limpar" id="btn-limpar">Limpar</button>
+
+        <div class="controles">
+            <span id="contador-total">Total: 0</span>
+            <span id="contador-pendentes">Pendentes: 0</span>
+            <span id="contador-comprados">Comprados: 0</span>
+
+            <select id="filtro-status">
+                <option value="all">Todos</option>
+                <option value="pending">Pendentes</option>
+                <option value="purchased">Comprados</option>
+            </select>
+
+            <select id="ordenar">
+                <option value="default">Original</option>
+                <option value="alphabetical">Ordem Alfabética</option>
+                <option value="status">Por Status</option>
+            </select>
+        </div>
     </div>
 </body>
 </html>
