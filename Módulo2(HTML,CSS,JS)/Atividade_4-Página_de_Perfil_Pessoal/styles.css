@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: #7b59f8;
+  background-color: #444444;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -145,7 +145,7 @@ aside {
 
 main {
   flex: 1;
-  background-color: #7b59f8;
+  background-color: #444444;
   padding: 15px;
 }
 
@@ -173,7 +173,8 @@ main {
   gap: 20px;
   padding: 20px;
   flex-wrap: wrap;
-  background-color: #5e31ff;
+  background-color: black;
+  color: white;
   border-radius: 8px;
   margin-bottom: 20px;
 }
@@ -207,7 +208,8 @@ main {
   gap: 20px;
   padding: 20px;
   margin-bottom: 20px;
-  background-color: #5e31ff;
+  background-color: black;
+  color: white;
   border-radius: 8px;
 }
 
@@ -245,11 +247,11 @@ main {
 
 
 .projetos {
-  color: black;
+  color: white;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  background-color: #5e31ff;
+  background-color: black;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
@@ -297,10 +299,10 @@ main {
 
 
 .contato {
-  color: black;
+  color: white;
   display: flex;
   flex-direction: column;
-  background-color: #5e31ff;
+  background-color: black;
   border-radius: 8px;
   padding: 20px;
 }
@@ -318,7 +320,7 @@ form {
   align-items: center;
   flex-direction: column;
   gap: 15px;
-  background-color: #5e31ff;
+  background-color: black;
   padding: 20px;
   border-radius: 10px;
 }
@@ -326,7 +328,7 @@ form {
 form input,
 form textarea {
   width: 100%;
-  background-color: #3c2980;
+  background-color: #424242;
   border: 0;
   outline: 0;
   padding: 20px 15px;
@@ -347,8 +349,8 @@ form .enviar {
 
 form .enviar input {
   width: 140px;
-  background-color: #3c2980;
-  color: black;
+  background-color: #424242;
+  color: white;
   font-weight: 700;
   cursor: pointer;
   padding: 12px;

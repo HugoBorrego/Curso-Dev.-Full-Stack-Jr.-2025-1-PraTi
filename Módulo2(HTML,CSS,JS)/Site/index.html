@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastWay Motors</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <!-- <a href="#" class="logo">Marca</a> -->
+            <button id="navToggle" class="nav-toggle" aria-label="Abrir Menu">+</button>
+            <nav id="navMenu" class="nav">
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Serviços</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="container">
+            <h1>Bem-vindos ao FastWay Motors</h1>
+            <p>Aqui realizamos seus sonhos com um pingo de luxúria</p>
+            <a href="" class="btn">Fale Conosco</a>
+        </div>
+    </section>
+
+    <section id="services" class="services container">
+        <h2>Nossos Serviços</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Toyota Supra</h3>
+                <img src="assets/Supra.jpg" alt="Toyota Supra" width="250">
+            </div>
+            <div class="card">
+                <h3>Toyota Celica</h3>
+                <img src="assets/Celica.jpg" alt="Toyota Celica" width="250">
+            </div>
+            <div class="card">
+                <h3>Toyota Gazoo</h3>
+                <img src="assets/Gazoo.jpg" alt="Toyota Gazoo Racing" width="250">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact container">
+        <h2>Contato</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Nome Completo</label>
+                <input type="text" id="name" name="name" required>
+                <span class="error-msg"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-msg"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Sua mensagem</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <span class="error-msg"></span>
+            </div>
+
+            <button type="submit" class="btn">Enviar Mensagem</button>
+        </form>
+    </section>  
+
+    <footer class="footer">
+        <div class="container">
+            <p>2025 Nome da Marca. Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
