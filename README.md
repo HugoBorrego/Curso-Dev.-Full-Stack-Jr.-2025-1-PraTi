@@ -3,6 +3,7 @@
 ![Fullstack Junior +praTi](https://img.shields.io/badge/Fullstack-Development-blueviolet)
 ![Java](https://img.shields.io/badge/Java-007396)
 ![React](https://img.shields.io/badge/React-61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-6DB33F)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F)
