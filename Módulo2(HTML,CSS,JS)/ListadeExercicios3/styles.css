@@ -1,0 +1,129 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Corpo de página com cores leves */
+body {
+    background: #9ffded;
+    line-height: 1.4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Espaçamento dos conteiners */
+header,
+main {
+    margin: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 8px;
+}
+
+header {
+    background-color: #1e1e2f;
+    color: #ffffff;
+}
+
+header strong {
+    color: #ffffff;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00ffd5, #0077ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Cabeçalho do Portal Gamer */
+header h1 {
+    font-size: 2.3rem;
+    width: 100%;
+    height: 4rem;
+    background: #23235f;
+    color: #00ffd5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+header p {
+    width: 100%;
+    max-width: 90%;
+    margin: 1rem auto;
+    margin-bottom: 1rem;
+}
+
+header:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+/* Estilo geral da seção */
+section {
+    padding: 1rem 2rem;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #1e1e2f;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    color: #f0f0f0;
+}
+
+/* Títulos das seções */
+section h2 {
+    font-size: 2rem;
+    color: #00ffd5;
+    margin-bottom: 15px;
+    border-left: 6px solid #00ffd5;
+    padding-left: 12px;
+}
+
+/* Parágrafos */
+section p {
+    font-size: 1rem;
+    line-height: 1.2;
+}
+
+/* Destaque em negrito */
+section p strong {
+    color: #ffffff;
+    font-weight: bold;
+    background: linear-gradient(90deg, #00ffd5, #0077ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+section:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+/* Rodapé */
+footer {
+    margin: 0;
+    padding: 0.2rem 0.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background: #1e1e2f;
+    color: #00ffd5;
+}
+
+/* CLASSE.destaque - itálico */
+.destaque {
+    font-style: italic;
+    /* background-color: #013a30; */
+}
+
+/* ID#importante - borda verde água destacada */
+#importante {
+    border-top: 1px solid #00ffd5;
+    padding-top: 0.5rem;
+    margin-top: 1rem;
+}
