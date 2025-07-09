@@ -7,7 +7,7 @@
 
 /* Corpo de página com cores leves */
 body {
-    background: #9ffded;
+    background: #111111;
     line-height: 1.4;
     min-height: 100vh;
     display: flex;
@@ -15,10 +15,14 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+main {
+    flex: 1;
+}
+
 /* Espaçamento dos conteiners */
 header,
 main {
-    margin: 0.5rem;
+    margin: 1.2rem;
     padding: 0.2rem 0.5rem;
     border-radius: 8px;
 }
@@ -126,4 +130,170 @@ footer {
     border-top: 1px solid #00ffd5;
     padding-top: 0.5rem;
     margin-top: 1rem;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem;
+        height: auto;
+        padding: 0.5rem;
+    }
+
+    section {
+        padding: 1rem;
+        margin: 1rem;
+        max-width: 100%;
+    }
+
+    section h2 {
+        font-size: 1.6rem;
+    }
+
+    section p {
+        font-size: 0.95rem;
+    }
+
+    header p {
+        max-width: 100%;
+        font-size: 0.9rem;
+    }
+}
+
+/* Ajustes para tablets em modo paisagem */
+@media (min-width: 769px) and (max-width: 1024px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+    }
+
+    section p {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+}
+
+/* Estilo padrão para telas maiores (desktops) */
+@media (min-width: 1025px) {
+    section {
+        padding: 2rem;
+        max-width: 800px;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    section p {
+        font-size: 1.05rem;
+    }
+}
+
+/* Navegação estilo "hamburguer" */
+.nav {
+    width: 100%;
+    background-color: #1e1e2f;
+    padding: 0.5rem 1rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li a {
+    color: #00ffd5;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #00ffd5;
+}
+
+/* Versão mobile */
+@media (max-width: 600px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+}
+
+
+/* CSS da galeria */
+
+.galeria-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.galeria-container {
+  width: 90%;
+  overflow: hidden;
+}
+
+.galeria-grid {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.galeria-item {
+  flex: 0 0 25%;
+  text-align: center;
+}
+
+.galeria-grid p {
+    color: #ffffff;
+}
+
+.galeria-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
 }

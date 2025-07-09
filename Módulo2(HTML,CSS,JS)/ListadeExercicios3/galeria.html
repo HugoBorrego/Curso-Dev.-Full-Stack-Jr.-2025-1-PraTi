@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="galeria-wrapper">
+        <button class="arrow left" onclick="scrollgaleria(-1)">&#10094;</button>
+
+        <div class="galeria-container">
+            <div class="galeria-grid" id="galeriaGrid">
+                <div class="galeria-item"><img src="assets/Aventador.jpg" alt="Legenda 1">
+                    <p>Lamborghini Aventador</p>
+                </div>
+                <div class="galeria-item"><img src="assets/BMW320i.jpg" alt="Legenda 2">
+                    <p>BMW 320i</p>
+                </div>
+                <div class="galeria-item"><img src="assets/Ferrari.jpg" alt="Legenda 3">
+                    <p>Ferrari</p>
+                </div>
+                <div class="galeria-item"><img src="assets/Maserati.jpg" alt="Legenda 4">
+                    <p>Masserati</p>
+                </div>
+                <div class="galeria-item"><img src="assets/NSX.jpg" alt="Legenda 5">
+                    <p>Honda NSX</p>
+                </div>
+                <div class="galeria-item"><img src="assets/Porsche_911.jpg" alt="Legenda 6">
+                    <p>Porsche 911 GT</p>
+                </div>
+                <div class="galeria-item"><img src="assets/Skyline.jpg" alt="Legenda 7">
+                    <p>Nissan Skyline</p>
+                </div>
+                <div class="galeria-item"><img src="assets/Supra.jpg" alt="Legenda 8">
+                    <p>Toyota Supra</p>
+                </div>
+            </div>
+        </div>
+
+        <button class="arrow right" onclick="scrollgaleria(1)">&#10095;</button>
+    </div>
+</body>
+
+<script>
+    let scrollIndex = 0;
+
+    function scrollgaleria(direction) {
+        const galeria = document.getElementById("galeriaGrid");
+        const itemWidth = galeria.children[0].offsetWidth + 16; 
+        scrollIndex += direction;
+
+        const maxScroll = galeria.children.length - 4;
+        if (scrollIndex < 0) scrollIndex = 0;
+        if (scrollIndex > maxScroll) scrollIndex = maxScroll;
+
+        galeria.style.transform = `translateX(-${itemWidth * scrollIndex}px)`;
+    }
+
+</script>
+
+</html>

@@ -20,7 +20,13 @@
             competidor hardcore, o Portal Gamer é o lugar onde sua jornada começa - e nunca termina.
         </p>
     </header>
-
+    <nav class="nav">
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links">
+            <li><a href="#Missão">Missão</a></li>
+            <li><a href="#Visão">Visão</a></li>
+        </ul>
+    </nav>
     <main>
         <section id="Missão">
             <h2>
@@ -48,5 +54,10 @@
         <p>&copy; 2025 Hugo Borrego</p>
     </footer>
 </body>
-
+<script>
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    }
+</script>
 </html>
