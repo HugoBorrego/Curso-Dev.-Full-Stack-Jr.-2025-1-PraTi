@@ -7,6 +7,8 @@
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F)
+![Docker](https://img.shields.io/badge/Docker-007396)
+![Python](https://img.shields.io/badge/Python-61DAFB)
 
 ### Tecnologias e Ferramentas
 
@@ -34,33 +36,38 @@
 
 O curso está dividido em módulos que abrangem diversos aspectos do desenvolvimento fullstack:
 
-1. **Introdução ao Desenvolvimento Web:**
+1. **Introdução a Estrutura de Dados com Node.js:**
+   - Fundamentos de JavaScript
+   - Utilização do Node.js
+
+2. **Introdução ao Desenvolvimento Web e Controle de Versão:**
+   - Versionamento com Git e GitHub
    - Fundamentos de HTML, CSS e JavaScript
    - Conceitos básicos de desenvolvimento web
 
-2. **Frontend com React:**
+4. **Frontend com React:**
    - Componentes e Estado
    - Hooks e Context API
    - Integração com APIs
 
-3. **Fundamentos de Java:**
+5. **Fundamentos de Java:**
    - Sintaxe e Estruturas de Controle
    - Orientação a Objetos
    - Collections e Estruturas de Dados
   
-4. **Integração de Banco de Dados:**
+6. **Integração de Banco de Dados:**
    - Modelagem de Banco de Dados
    - Operações CRUD com MySQL e PostgreSQL
 
-5. **Desenvolvimento Backend com Spring Boot:**
+7. **Desenvolvimento Backend com Spring Boot:**
    - Configuração de Projetos Spring
    - RESTful APIs
    - Segurança e Autenticação
 
-6. **Práticas de DevOps:**
+8. **Práticas de DevOps:**
    - Controle de Versão com Git
    - Automatização de Builds e Deploy
 
-7. **Introdução à Inteligência Artificial:**
+9. **Introdução à Inteligência Artificial:**
    - Configuração de Pipelines de CI/CD
    - Consumo de APIs de IA em Projetos Web
