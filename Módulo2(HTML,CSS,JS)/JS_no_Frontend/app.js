@@ -2,7 +2,6 @@ const formAdicionar = document.getElementById('form-adicionar')
 const inputItem = document.getElementById('input-item')
 const listaItens = document.getElementById('lista-itens')
 const btnLimpar = document.getElementById('btn-limpar')
-
 const filtroStatus = document.getElementById('filtro-status')
 const ordenar = document.getElementById('ordenar')
 const contadorTotal = document.getElementById('contador-total')
