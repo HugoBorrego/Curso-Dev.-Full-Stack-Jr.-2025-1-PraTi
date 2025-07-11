@@ -19,6 +19,7 @@ body {
     box-shadow: 0 2px 8px black;
     width: 90%;
     max-width: 400px;
+    min-width: 400px;
 }
 
 h1 {
@@ -127,3 +128,59 @@ li:nth-child(odd) {
     border-color: #004da0;
     box-shadow: 0 0 5px rgba(0, 76, 156, 0.5);
 }
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 0.5rem;
+        margin-top: 3rem;
+    }
+
+    .conteiner {
+        padding: 1.75rem;
+        border-radius: 4px;
+        margin: 1rem;
+    }
+
+    h1 {
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .seletores select {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .contadores {
+        font-size: 0.85rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+
+    button {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.6rem;
+        width: 6rem;
+    }
+
+    .limpar {
+        padding: 0.4rem;
+    }
+
+    form {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #input-item {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 0.4rem;
+    }
+
+    li {
+        font-size: 0.85rem;
+    }
+}
+
