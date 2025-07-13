@@ -23,12 +23,10 @@
 
         async function consultarCEP() {
             const cep = inputCep.value
-
             const url = `https://viacep.com.br/ws/${cep}/json/`
 
             try {
                 const resp = await fetch(url, { method: 'GET' })
-
                 const data = await resp.json()
 
                 divResultado.innerHTML = `
