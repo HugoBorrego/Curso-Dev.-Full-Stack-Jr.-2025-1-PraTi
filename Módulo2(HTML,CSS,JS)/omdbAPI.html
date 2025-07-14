@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OMDb API</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: black;
+            color: #ccc;
+            display: flex;
+            justify-content: center;
+            font-size: 1rem;
+            padding: 1.5rem;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #444444;
+        }
+
+        .formulario {
+            display: flex;
+            justify-content: center;
+            margin-top: 2rem;
+            border: 1px solid black;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            background-color: #000000;
+            border-radius: 8px;
+            color: white;
+            border: none;
+            margin-right: 1rem;
+            font-weight: bold;
+            width: 20rem;
+        }
+
+        input::placeholder {
+            color: white;
+            text-align: center;
+        }
+
+        button {
+            color: white;
+            background-color: black;
+            font-weight: bold;
+            border-radius: 8px;
+            padding: 0.5rem;
+            border: none;
+            width: 5rem;
+        }
+
+        .resultado {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Pesquise seus filmes e séries</h1>
+    </header>
+    <main>
+        <div class="formulario">
+            <input type="text" id="filme" placeholder="Digite o nome do filme">
+            <button id="buscar">Buscar</button>
+        </div>
+        <div class="resultado">
+            <div id="resultado"></div>
+        </div>
+    </main>
+</body>
+
+<script>
+    const nomeFilme = document.getElementById('filme')
+    const btnBuscar = document.getElementById('buscar')
+    const divResultado = document.getElementById('resultado')
+
+    async function consultarFilme() {
+        const filme = nomeFilme.value.replace(/\s/g, "+").toLowerCase()
+
+        const url = `http://www.omdbapi.com/?t=${filme}&apikey=96ee3ce2`
+
+        try {
+            const resp = await fetch(url, { method: 'GET' })
+            const data = await resp.json()
+
+            divResultado.innerHTML = `
+                <h2>Filme Encontrado:</h2>
+                <img src="${data.Poster}" width=300>
+                    <ul>
+                        <li>Título: ${data.Title}</li>
+                        <li>Ano: ${data.Year}</li>
+                        <li>Gênero: ${data.Genre}</li>
+                    </ul>
+                `
+        } catch (error) {
+            divResultado.innerHTML = `Erro inesperado`
+        }
+    }
+    btnBuscar.addEventListener('click', consultarFilme)
+</script>
+
+</html>
