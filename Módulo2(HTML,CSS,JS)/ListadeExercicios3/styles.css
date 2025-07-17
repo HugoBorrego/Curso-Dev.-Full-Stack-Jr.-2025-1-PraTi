@@ -298,6 +298,36 @@ footer {
   right: 10px;
 }
 
+/* Tablets */
+@media (max-width: 1024px) {
+  .galeria-item {
+    flex: 0 0 33.3333%;
+  }
+}
+
+/* Celulares grandes */
+@media (max-width: 768px) {
+  .galeria-item {
+    flex: 0 0 50%;
+  }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+  .galeria-item {
+    flex: 0 0 100%;
+  }
+
+  .galeria-item img {
+    height: 150px;
+  }
+
+  .arrow {
+    font-size: 24px;
+    padding: 8px;
+  }
+}
+
 h2 {
     color: #6d32f7;
     border-bottom: 2px solid #976bff;
