@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("//db.onlinewebfonts.com/c/3066b11123e63381b8e2aa554b18bf32?family=Bauhaus+93+V1");
+
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +9,13 @@
 
 :root {
     --primary: #ff0000;
+    --second: #ffffff;
+    --third: rgba(255, 255, 255, 0.5);
 }
 
 body {
     position: relative;
+    background-color: #000000;
     font-family: "Roboto", sans-serif;
     width: 100%;
     height: 100vh;
@@ -25,12 +31,32 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 100px; /* 20px na altura(em cima e em baixo) e 100px(lado direito e esquerdo) na largura */
-    border-bottom: 1px solid;
+    border-bottom: 1px solid var(--third);
+    z-index: 20;
 }
 
 .logo img {
     max-width: 60px;
     max-height: 60px;
+    filter: invert(1); /* Invertendo a cor da imagem */
+    transition: transform 0.7s ease;
+}
+
+.logo:hover img {
+    transform: rotate(540deg) scale(1.2); /* Ele vai girar 540° e aumentar seu tamanho em 20% */
+    transition: transform 0.5ease;
+}
+
+.menu {
+    color: var(--second);
+    font-size: 2em;
+    padding-left: 1rem;
+    transition: 0.5s;
+}
+
+.menu:hover {
+    color: var(--primary);
+    transform: scale(1.2);
 }
 
 .nav {
@@ -43,6 +69,7 @@ header {
 }
 
 .nav li a {
+    color: var(--second);
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 300;
@@ -59,22 +86,173 @@ header {
     position: relative;
     width: 130px;
     height: 40px;
-    transition: 0.5s;
+    transition: 0.7s;
 }
 
 .search:hover {
     width: 300px;
+    color: var(--primary);
+    border-radius: 6px;
 }
 
 .search input {
     position: absolute;
     left: 0;
     top: 0;
+    color: var(--second);
     width: 100%;
     height: 100%;
     background-color: transparent;
-    border: 1px solid;
+    border: 1px solid var(--third);
     outline: none;
     border-radius: 6px;
     padding: 0 10px 0 5px;
+}
+
+.search input::placeholder {
+    color: var(--second);
+    text-transform: uppercase;
+    font-weight: 300;
+    transform: translateX(6px);
+}
+
+.search input:hover::placeholder {
+    color: var(--primary);
+}
+
+.search ion-icon {
+    font-size: 1.4rem;
+    color: var(--second);
+    position: absolute;
+    top: 50%; /* Para ir pra baixo */
+    right: 10px; /* Para ir para a direita */
+    transform: translateY(-50%); /* Para ficar no meio */
+    padding-left: 1px;
+    border-left: 1px solid var(--third); 
+    cursor: pointer;
+}
+
+.search:hover ion-icon {
+    color: var(--primary);
+    border-left: 1px solid var(--primary); 
+}
+
+.swiper {
+    width: 100%;
+    height: 100vh;
+}
+
+.swiper .swiper-wrapper {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper .swiper-wrapper .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz com que a imagem se adeque ao ambiente */
+    object-position: center;
+}
+
+.swiper .swiper-wrapper .swiper-slide .banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px 10px 0;
+    overflow: hidden;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.swiper .swiper-wrapper .swiper-slide .banner .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.left {
+    margin-left: 80px;
+}
+
+.banner .left .features {
+    max-width: 400px;
+    margin-bottom: 100px;
+}
+
+.banner .left .features .rating {
+    color: var(--second);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.banner .left .features .rating .score {
+    padding: 15px;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--primary);
+    background-color: var(--second);
+}
+
+.banner .left .features .content {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.banner .left .features .pricing {
+    color: var(--second);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.banner .left .features .pricing ion-icon {
+    padding: 15px;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--second);
+    background-color: rgba(255, 0, 0, 0.5);
+    transition: 0.3s;
+}
+
+.banner .left .features .pricing ion-icon:hover {
+    background: rgba(255, 0, 0, 0.9);
+}
+
+.banner img {
+    max-width: 450px;
+    max-height: 650px;
+    width: 50%;
+    height: 50%;
+}
+
+.right {
+    margin-right: 80px;
+}
+
+.swiper .swiper-wrapper .swiper-slide .banner .right {
+    position: relative;
+    height: 100vh;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    z-index: 100;
+}
+
+.banner .right iframe {
+    max-width: 450px;
+    max-height: 255px;
 }
