@@ -140,11 +140,17 @@ header {
 .swiper {
     width: 100%;
     height: 100vh;
+
 }
 
 .swiper .swiper-wrapper {
     margin: 0;
     padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.swiper .swiper-wrapper .swiper-slide {
     width: 100%;
     height: 100%;
 }
@@ -169,12 +175,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.swiper .swiper-wrapper .swiper-slide .banner .left {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
 }
 
 .left {
@@ -230,11 +230,19 @@ header {
     background: rgba(255, 0, 0, 0.9);
 }
 
+.banner {
+    margin-top: 80px;
+}
+
 .banner img {
     max-width: 450px;
     max-height: 650px;
     width: 50%;
     height: 50%;
+}
+
+.banner h1 {
+    color: var(--second);
 }
 
 .right {
@@ -254,5 +262,5 @@ header {
 
 .banner .right iframe {
     max-width: 450px;
-    max-height: 255px;
+    max-height: 250px;
 }
