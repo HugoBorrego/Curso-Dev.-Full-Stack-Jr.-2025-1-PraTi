@@ -230,10 +230,6 @@ header {
     background: rgba(255, 0, 0, 0.9);
 }
 
-.banner {
-    margin-top: 80px;
-}
-
 .banner img {
     max-width: 450px;
     max-height: 650px;
@@ -243,6 +239,7 @@ header {
 
 .banner h1 {
     color: var(--second);
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .right {
@@ -263,4 +260,32 @@ header {
 .banner .right iframe {
     max-width: 450px;
     max-height: 250px;
+}
+
+.button-right .swiper-button-prev {
+    background-color: rgba(59, 55, 55, 0.5);
+    color: rgb(99, 99, 99);
+    padding: 2rem;
+    display: flex;
+    color: rgb(185, 154, 154);
+    font-size: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-left .swiper-button-next {
+    background-color: rgba(59, 55, 55, 0.5);
+    color: rgb(99, 99, 99);
+    padding: 2rem;
+    display: flex;
+    color: rgb(185, 154, 154);
+    font-size: 10px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
