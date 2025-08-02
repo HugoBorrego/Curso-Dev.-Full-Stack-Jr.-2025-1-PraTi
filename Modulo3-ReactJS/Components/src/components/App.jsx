@@ -11,7 +11,6 @@ function App() {
   return (
     <>
       <Button onClick={handleClick} />
-      
     </>
   )
 }

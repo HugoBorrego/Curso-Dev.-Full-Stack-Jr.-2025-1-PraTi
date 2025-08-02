@@ -2,15 +2,17 @@ function Greeting(props) {
     return <h1>Olá, {props.name}</h1>
 }
 
-function App() {
+function Greet() {
 
     const name = 'Hugo'
 
 
     return (
-        <Greeting name={name} />
+        <>
+          <Greeting name={name} />
+        </>
     )
-    
+
 }
 
-export default Greeting
+export default Greet
