@@ -5,10 +5,18 @@ import App from './components/App'
 import Produtos from './components/Produtos'
 import Greet from './components/Greeting'
 
+import LifeCycleClassComponent from './components/LifeCycleClassComponent'
+import LifeCycleFunctionalComponent from './components/LifeCycleFunctionalComponent'
+
+import ViaCepFunctional from './components/ViaCepFunctional'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
     <Produtos />
     <Greet />
+    <LifeCycleClassComponent />
+    <LifeCycleFunctionalComponent />
+    <ViaCepFunctional />
   </StrictMode>,
 )
