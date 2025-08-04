@@ -17,6 +17,6 @@ createRoot(document.getElementById('root')).render(
     <Greet />
     <LifeCycleClassComponent />
     <LifeCycleFunctionalComponent />
-    <ViaCepFunctional />
+    <ViaCepFunctional cep='12081410' />
   </StrictMode>,
 )
