@@ -25,16 +25,85 @@ if (velocidadeCarro > 80) {
     console.log('O valor da multa é de ' + multa + ' reais.')
 }
 
+
 /* 3. Faça um algoritmo que pergunte a distância que um passageiro deseja percorrer em Km. Calcule o preço da passagem, cobrando R$ 0.50 por Km para viagens até 200 Km e R$ 0.45 para viagens mais longas. */
+
+let valorViagem
+let distanciaPercorrida = parseFloat(prompt('Quantos Km deseja percorrer? '))
+
+if (distanciaPercorrida <= 200) {
+    valorViagem = (distanciaPercorrida * (0.5)).toFixed(2)
+    console.log(`O valor da viagem é R$ ${valorViagem}`)
+} else {
+    valorViagem = (distanciaPercorrida * (0.45)).toFixed(2)
+    console.log(`O valor da viagem é R$ ${valorViagem}`)
+}
 
 
 /* 4. Crie um programa que leia o tamanho de três segmentos de reta. Analise seus comprimentos e diga se é possível formar um triângulo com essas retas. Matematicamente, para três segmentos formarem um triângulo, o comprimento de cada lado deve ser menor que a soma dos outros dois. */
 
+const a = parseInt(prompt("Digite o comprimento do primeiro segmento:"))
+const b = parseInt(prompt("Digite o comprimento do segundo segmento:"))
+const c = parseInt(prompt("Digite o comprimento do terceiro segmento:"))
+
+if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0) {
+    alert("Por favor, insira valores numéricos positivos.")
+}
+
+if ((a < b + c) && (b < a + c) && (c < a + b)) {
+    alert("Sim! Os segmentos podem formar um triângulo.")
+} else {
+    alert("Não! Os segmentos NÃO podem formar um triângulo.")
+}
+
 
 /* 5. Crie um jogo de JoKenPo(Pedra - Papel - Tesoura). */
 
+function jogarJoKenPo() {
+    const opcoes = ["pedra", "papel", "tesoura"]
+
+    let jogador = prompt("Escolha: pedra, papel ou tesoura").toLowerCase()
+
+    if (!opcoes.includes(jogador)) {
+        alert("Escolha inválida! Tente novamente com pedra, papel ou tesoura.")
+        return
+    }
+
+    const computador = opcoes[Math.floor(Math.random() * 3)]
+
+    alert(`Você escolheu: ${jogador}\nComputador escolheu: ${computador}`)
+
+    if (jogador === computador) {
+        alert("Empate!")
+    } else if (
+        (jogador === "pedra" && computador === "tesoura") ||
+        (jogador === "papel" && computador === "pedra") ||
+        (jogador === "tesoura" && computador === "papel")
+    ) {
+        alert("Você venceu! 🎉")
+    } else {
+        alert("Você perdeu! 😢")
+    }
+}
+
+jogarJoKenPo()
+
 
 /* 6. Crie um jogo onde o computador vai sortear um número entre 1 e 5. O jogador vai tentar descobrir qual foi o valor sorteado. */
+
+const computador = Math.floor(Math.random() * 5) + 1
+
+const tentativa = parseInt(prompt("Digite um número entre 1 e 5: "))
+
+if (isNaN(tentativa) || tentativa < 1 || tentativa > 5) {
+    alert("Por favor, digite um número válido entre 1 e 5.")
+}
+
+if (tentativa === numeroSorteado) {
+    alert(`Parabéns! Você acertou. O número era ${numeroSorteado}.`)
+} else {
+    alert(`Que pena! Você errou. O número era ${numeroSorteado}.`)
+}
 
 
 /* 7. Uma empresa de aluguel de carros precisa cobrar pelos seus serviços. O aluguel de um carro popular custa R$ 90,00 por dia e um carro de luxo custa R$ 150,00. Além disso, o cliente paga por Km percorrido. Faça um programa que leia o tipo de carro alugado (popular ou luxo), quantos dias de aluguel e quantos Km foram percorridos. No final, mostre o preço a ser pago de acordo com os dados a seguir:
@@ -45,6 +114,40 @@ Carros de luxo
 - Até 200 Km percorridos: R$ 0,30 por Km
 - Acima de 200 Km percorridos: R$ 0,25 por Km */
 
+function calcularAluguel() {
+    const tipoCarro = prompt("Qual o tipo de carro alugado? (popular ou luxo)").toLowerCase()
+    const dias = parseInt(prompt("Quantos dias de aluguel?"))
+    const km = parseFloat(prompt("Quantos Km foram percorridos?"))
+
+    if (
+        (tipoCarro !== "popular" && tipoCarro !== "luxo") ||
+        isNaN(dias) || dias <= 0 ||
+        isNaN(km) || km < 0
+    ) {
+        alert("Dados inválidos. Verifique as informações e tente novamente.")
+    }
+
+    let precoDia = 0
+    let precoKm = 0
+
+    if (tipoCarro === "popular") {
+        precoDia = 90
+        precoKm = km <= 100 ? 0.20 : 0.10
+    } else {
+        precoDia = 150
+        precoKm = km <= 200 ? 0.30 : 0.25
+    }
+
+    const total = (dias * precoDia) + (km * precoKm)
+
+    alert(`Tipo de carro: ${tipoCarro}
+         Dias alugados: ${dias}
+         Km percorridos: ${km}
+         Valor total a pagar: R$ ${total.toFixed(2)}`)
+}
+
+calcularAluguel()
+
 
 /* 8. Um programa de vida saudável quer dar pontos por atividades físicas realizadas que podem ser trocados por dinheiro. Cada hora de atividade física no mês vale pontos. O sistema funciona assim:
 - até 10 h de atividade no mês: ganha 2 pontos por hora
@@ -53,8 +156,63 @@ Carros de luxo
 - A cada ponto ganho, o cliente fatura R$ 0,05 (5 centavos)
 Faça um programa que leia quantas horas de atividade uma pessoa teve por mês. Calcule e mostre quantos pontos ela teve e quanto dinheiro ela conseguiu ganhar. */
 
+function calcularRecompensa() {
+    const horas = parseFloat(prompt("Quantas horas de atividade física você fez este mês?"))
+
+    if (isNaN(horas) || horas < 0) {
+        alert("Por favor, insira um número válido de horas.")
+    }
+
+    let pontosPorHora = 0
+
+    if (horas <= 10) {
+        pontosPorHora = 2
+    } else if (horas <= 20) {
+        pontosPorHora = 5
+    } else {
+        pontosPorHora = 10
+    }
+
+    const pontosTotais = horas * pontosPorHora
+    const dinheiro = pontosTotais * 0.05
+
+    alert(`Você acumulou ${pontosTotais} pontos
+         Isso equivale a R$ ${dinheiro.toFixed(2)} em recompensas`)
+}
+
+calcularRecompensa()
+
 
 /* 9. Desenvolva um aplicativo que leia o salário e o sexo de vários funcionários. No final, mostre o total de salário pago aos homens e o total pago às mulheres. O programa vai perguntar ao usuário se ele quer continuar ou não sempre que ler os dados de um funcionário. */
+
+function calcularSalarios() {
+    let totalHomens = 0
+    let totalMulheres = 0
+
+    while (true) {
+        const salario = parseFloat(prompt("Digite o salário do funcionário"))
+        const sexo = prompt("Digite o sexo do funcionário (M para masculino, F para feminino)").toUpperCase()
+
+        if (isNaN(salario) || salario < 0 || (sexo !== "M" && sexo !== "F")) {
+            alert("Dados inválidos. Tente novamente.")
+            continue
+        }
+
+        if (sexo === "M") {
+            totalHomens += salario
+        } else {
+            totalMulheres += salario
+        }
+
+        const continuar = prompt("Deseja continuar? (S para sim, N para não)").toUpperCase()
+        if (continuar !== "S") break
+    }
+
+    alert(`Total pago aos homens: R$ ${totalHomens.toFixed(2)}
+         Total pago às mulheres: R$ ${totalMulheres.toFixed(2)}`)
+}
+
+calcularSalarios()
 
 
 /* 10. Crie um programa usando a estrutura “faça enquanto” que leia vários números. A cada laço, pergunte se o usuário quer continuar ou não. No final, mostre na tela:
@@ -63,8 +221,71 @@ b) Qual foi o menor valor digitado;
 c) A média entre todos os valores;
 d) Quantos valores são pares. */
 
+function analisarNumeros() {
+    let soma = 0
+    let menor = null
+    let quantidade = 0
+    let pares = 0
+
+    do {
+        const numero = parseFloat(prompt("Digite um número"))
+
+        if (isNaN(numero)) {
+            alert("Valor inválido. Tente novamente.")
+            continue
+        }
+
+        soma += numero
+        quantidade++
+
+        if (menor === null || numero < menor) {
+            menor = numero
+        }
+
+        if (numero % 2 === 0) {
+            pares++
+        }
+
+        const continuar = prompt("Deseja continuar? (S para sim, N para não)").toUpperCase()
+        if (continuar !== "S") break
+    } while (true)
+
+    const media = quantidade > 0 ? soma / quantidade : 0
+
+    alert(`Somatório dos valores: ${soma}
+         Menor valor digitado: ${menor}
+         Média dos valores: ${media.toFixed(2)}
+         Quantidade de valores pares: ${pares}`)
+}
+
+analisarNumeros()
+
 
 /* 11. Desenvolva um programa que leia o primeiro termo e a razão de uma PA (Progressão Aritmética), mostrando na tela os 10 primeiros elementos da PA e a soma entre todos os valores da sequência. */
+
+function gerarPA() {
+    const primeiro = parseFloat(prompt("Digite o primeiro termo da PA"))
+    const razao = parseFloat(prompt("Digite a razão da PA"))
+
+    if (isNaN(primeiro) || isNaN(razao)) {
+        alert("Valores inválidos. Tente novamente.")
+        return
+    }
+
+    let termos = ""
+    let soma = 0
+
+    for (let i = 0; i < 10; i++) {
+        const termo = primeiro + i * razao
+        termos += termo + (i < 9 ? ", " : "")
+        soma += termo
+    }
+
+    alert(`Os 10 primeiros termos da PA são: ${termos} 
+           Soma dos termos: ${soma}`)
+}
+
+gerarPA()
 
 
 /* 12. Faça um programa que mostre os 10 primeiros elementos da Sequência de Fibonacci. Ex.: 1, 1, 2, 3, 5, 8, 13, 21. */
@@ -85,8 +306,8 @@ d) Quantos valores são pares. */
 /* 17. Crie um programa que leia o nome e a idade de 9 pessoas e guarde esses valores em dois vetores, em posições relacionadas. No final, mostre uma listagem contendo apenas os dados das pessoas menores de idade. */
 
 /* 18. Crie um registro com o nome do funcionário, cargo e salário. Leia este registro para um funcionário e ao final escreva o conteúdo do registro. */
-    
-    
+
+
 /* 19. Escrever um programa para ler 5 horários. Validar cada horário fornecendo através de repetição.Escrever cada um deles no formato HH.MM.SS. */
 
 
