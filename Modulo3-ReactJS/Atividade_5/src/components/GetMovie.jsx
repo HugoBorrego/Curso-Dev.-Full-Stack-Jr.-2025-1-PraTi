@@ -9,6 +9,7 @@ export default function GetMovie() {
     const [loading, setLoading] = useState(false)
     const carouselRef = useRef(null)
     const [selectedMovie, setSelectedMovie] = useState(null)
+    const [favoriteMovie, setFavoriteMovie] = useState(null)
 
     const scrollLeft = () => {
         carouselRef.current.scrollBy({ left: -300, behavior: 'smooth' })
@@ -33,8 +34,8 @@ export default function GetMovie() {
                 language: 'pt-Br'
             }
         }).then(response => {
+            // console.log(response.data.results)
             setMovies(response.data.results)
-            console.log(response.data.results)
             setLoading(false)
         }).catch(error => {
             setErro(error.message)
@@ -60,6 +61,7 @@ export default function GetMovie() {
             const result = response.data.results[0]
             if (result) {
                 setSelectedMovie(result)
+                search.innerHTML = ''
             } else {
                 setErro("Filme não encontrado.")
             }
@@ -69,6 +71,24 @@ export default function GetMovie() {
             setLoading(false)
         })
     }
+
+    const handleFavorite = () => {
+        if (!selectedMovie) return
+
+        const storedFavorites = JSON.parse(localStorage.getItem('favoriteMovies')) || []
+        const isAlreadyFavorite = storedFavorites.some(movie => movie.id === selectedMovie.id)
+
+        if (!isAlreadyFavorite) {
+            const updatedFavorites = [...storedFavorites, selectedMovie]
+            localStorage.setItem('favoriteMovies', JSON.stringify(updatedFavorites))
+            setFavoriteMovie(selectedMovie)
+        } else {
+            const updatedFavorites = storedFavorites.filter(movie => movie.id !== selectedMovie.id)
+            localStorage.setItem('favoriteMovies', JSON.stringify(updatedFavorites))
+            setFavoriteMovie(null)
+        }
+    }
+
 
     return (
         <div>
@@ -113,6 +133,9 @@ export default function GetMovie() {
                             <p><strong>Sinopse</strong> - {selectedMovie.overview}</p>
                             <p><strong>Avaliação</strong> - {selectedMovie.vote_average}</p>
                             <button onClick={() => setSelectedMovie(null)}>Fechar</button>
+                            <button
+                                className={`favorite-button ${favoriteMovie?.id === selectedMovie?.id ? 'active' : ''}`} onClick={handleFavorite}>★</button>
+
                         </div>
                     </div>
                 )}
