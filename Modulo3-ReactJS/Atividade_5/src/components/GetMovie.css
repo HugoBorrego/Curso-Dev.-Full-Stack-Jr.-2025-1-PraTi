@@ -209,6 +209,30 @@
     background-color: orange;
 }
 
+.favorites-header button {
+    background-color: #FFD700; /* amarelo ouro */
+    color: #000; /* texto preto para contraste */
+    border: none; /* remove borda padrão */
+    border-radius: 8px; /* borda arredondada */
+    padding: 10px 16px;
+    margin: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.favorites-header button:hover {
+    background-color: #FFC107; /* tom mais escuro no hover */
+}
+
+
+.favorites-list {
+    margin: 20px;
+}
+
+.favorites-list h3 {
+    margin-bottom: 10px;
+}
 
 .search-header {
   display: flex;

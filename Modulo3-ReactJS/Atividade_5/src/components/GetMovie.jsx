@@ -10,6 +10,9 @@ export default function GetMovie() {
     const carouselRef = useRef(null)
     const [selectedMovie, setSelectedMovie] = useState(null)
     const [favoriteMovie, setFavoriteMovie] = useState(null)
+    const [showFavorites, setShowFavorites] = useState(false)
+    const [favoriteMoviesList, setFavoriteMoviesList] = useState([])
+
 
     const scrollLeft = () => {
         carouselRef.current.scrollBy({ left: -300, behavior: 'smooth' })
@@ -89,6 +92,12 @@ export default function GetMovie() {
         }
     }
 
+    const loadFavorites = () => {
+        const storedFavorites = JSON.parse(localStorage.getItem('favoriteMovies')) || []
+        setFavoriteMoviesList(storedFavorites)
+        setShowFavorites(true)
+    }
+
 
     return (
         <div>
@@ -140,6 +149,31 @@ export default function GetMovie() {
                     </div>
                 )}
             </div>
+            <div className="favorites-header">
+                <button onClick={loadFavorites}>Ver Favoritos</button>
+                {showFavorites && (
+                    <button onClick={() => setShowFavorites(false)}>Fechar Favoritos</button>
+                )}
+            </div>
+            {showFavorites && (
+                <div className="favorites-list">
+                    <h3>Filmes Favoritos</h3>
+                    <ul className="movie-carousel">
+                        {favoriteMoviesList.map((movie) => (
+                            <li className="movie-card" key={movie.id}>
+                                <div className="movie-poster">
+                                    <img src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} alt={movie.title} />
+                                    <p><strong>{movie.title}</strong></p>
+                                    <p>{movie.release_date}</p>
+                                </div>
+                                <button onClick={() => setSelectedMovie(movie)}>Saiba mais</button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            )}
+
+
         </div>
     )
 }
