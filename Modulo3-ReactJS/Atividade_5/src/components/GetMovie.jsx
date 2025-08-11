@@ -1,27 +1,27 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react"
 import axios from 'axios'
 import './GetMovie.css'
 
 export default function GetMovie() {
     const [movies, setMovies] = useState([])
+    const [search, setSearch] = useState('')
     const [erro, setErro] = useState(null)
     const [loading, setLoading] = useState(false)
-    const carouselRef = useRef(null);
-    const [selectedMovie, setSelectedMovie] = useState(null);
+    const carouselRef = useRef(null)
+    const [selectedMovie, setSelectedMovie] = useState(null)
 
     const scrollLeft = () => {
-        carouselRef.current.scrollBy({ left: -300, behavior: 'smooth' });
-    };
+        carouselRef.current.scrollBy({ left: -300, behavior: 'smooth' })
+    }
 
     const scrollRight = () => {
-        carouselRef.current.scrollBy({ left: 300, behavior: 'smooth' });
-    };
-
+        carouselRef.current.scrollBy({ left: 300, behavior: 'smooth' })
+    }
 
     useEffect(() => {
         setLoading(true)
         setErro(null)
-        getMovies();
+        getMovies()
     }, [])
 
     const getMovies = () => {
@@ -33,11 +33,40 @@ export default function GetMovie() {
                 language: 'pt-Br'
             }
         }).then(response => {
-            setMovies(response.data.results);
-            setLoading(false);
+            setMovies(response.data.results)
+            console.log(response.data.results)
+            setLoading(false)
         }).catch(error => {
-            setErro(error.message);
-            setLoading(false);
+            setErro(error.message)
+            setLoading(false)
+        })
+    }
+
+    const handleSearch = () => {
+        if (!search.trim()) return
+
+        setLoading(true)
+        setErro(null)
+
+        axios({
+            method: 'get',
+            url: 'https://api.themoviedb.org/3/search/movie',
+            params: {
+                api_key: '6214d79d96730772f84a884a0fe2705a',
+                language: 'pt-BR',
+                query: search
+            }
+        }).then(response => {
+            const result = response.data.results[0]
+            if (result) {
+                setSelectedMovie(result)
+            } else {
+                setErro("Filme não encontrado.")
+            }
+            setLoading(false)
+        }).catch(error => {
+            setErro(error.message)
+            setLoading(false)
         })
     }
 
@@ -46,8 +75,14 @@ export default function GetMovie() {
             {loading && <p>Carregando filmes...</p>}
             {erro && <p>Erro ao carregar filmes: {erro}</p>}
 
-            <div className="search-movie">
-                
+            <div className="search-header">
+                <input
+                    type="text"
+                    placeholder="Digite o nome do filme..."
+                    value={search}
+                    onChange={(e) => setSearch(e.target.value)}
+                />
+                <button onClick={handleSearch}>Buscar</button>
             </div>
 
             <div className="carousel-wrapper">
@@ -73,7 +108,10 @@ export default function GetMovie() {
                         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
                             <img src={`https://image.tmdb.org/t/p/w300/${selectedMovie.poster_path}`} alt={selectedMovie.title} />
                             <h2>{selectedMovie.title}</h2>
-                            <p>{selectedMovie.overview}</p>
+                            {/* <p><strong>Diretor</strong> - {selectedMovie.director}</p>
+                            <p><strong>Elenco</strong> - {selectedMovie.cast}</p> */}
+                            <p><strong>Sinopse</strong> - {selectedMovie.overview}</p>
+                            <p><strong>Avaliação</strong> - {selectedMovie.vote_average}</p>
                             <button onClick={() => setSelectedMovie(null)}>Fechar</button>
                         </div>
                     </div>
