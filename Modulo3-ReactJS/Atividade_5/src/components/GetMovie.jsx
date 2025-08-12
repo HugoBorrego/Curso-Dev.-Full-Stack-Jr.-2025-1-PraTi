@@ -104,7 +104,14 @@ export default function GetMovie() {
             {loading && <p>Carregando filmes...</p>}
             {erro && <p>Erro ao carregar filmes: {erro}</p>}
 
-            <div className="search-header">
+            <div className="header">
+                <h1>
+                    <span className="blue">Projeto</span>
+                    <span className="orange">Movies</span>
+                </h1>
+            </div>
+
+            <div className="search-section">
                 <input
                     type="text"
                     placeholder="Digite o nome do filme..."
@@ -113,6 +120,7 @@ export default function GetMovie() {
                 />
                 <button onClick={handleSearch}>Buscar</button>
             </div>
+
 
             <div className="carousel-wrapper">
                 <button className="nav-button left" onClick={scrollLeft}>‹</button>

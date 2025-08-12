@@ -234,17 +234,37 @@
     margin-bottom: 10px;
 }
 
-.search-header {
+/* Header com título centralizado */
+.header {
+  background-color: #222;
+  padding: 20px 0;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.header h1 {
+  font-size: 36px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.header .blue {
+  color: #007bff;
+}
+
+.header .orange {
+  color: #ffb347; 
+}
+
+.search-section {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
   padding: 20px;
-  background-color: #222;
-  border-radius: 5px;
 }
 
-.search-header input {
+.search-section input {
   padding: 10px;
   width: 300px;
   border-radius: 6px;
@@ -252,7 +272,7 @@
   font-size: 16px;
 }
 
-.search-header button {
+.search-section button {
   padding: 10px 16px;
   background-color: #007bff;
   color: white;
@@ -262,6 +282,6 @@
   font-size: 16px;
 }
 
-.search-header button:hover {
+.search-section button:hover {
   background-color: #0056b3;
 }
