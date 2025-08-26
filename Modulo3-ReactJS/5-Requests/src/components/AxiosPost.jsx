@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
+import axios from 'axios' // Tem que dar "npm install axios"
 
 const AxiosPost = () => {
     const [name, setName] = useState('')

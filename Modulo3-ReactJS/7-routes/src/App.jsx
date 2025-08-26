@@ -28,3 +28,6 @@ export default function App() {
 // Routes - contém a lista de rotas que são demapeadas
 
 // Route - são as rotas
+
+// No terminal podemos dar 'npm i react-router-dom'
+// ou 'npm i react-router-dom@version-6 react-router@version-6' para versão mais estável

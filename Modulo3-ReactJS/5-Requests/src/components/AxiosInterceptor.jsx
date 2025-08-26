@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import axios from 'axios' // Tem que dar "npm install axios"
 
 axios.interceptors.request.use((config) => {
         // Adiciona um cabeçalho de autorização com um token
@@ -75,4 +75,4 @@ const AxiosInterceptor = () => {
     )
 }
 
-export default AxiosInterceptor
+export default AxiosInterceptor 

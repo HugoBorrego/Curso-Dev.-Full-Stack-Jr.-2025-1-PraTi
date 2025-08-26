@@ -1,7 +1,7 @@
 // Importação dos hooks useState e useEffect do React
 import { useState, useEffect } from 'react';
 // Importação do Axios para realizar requisições HTTP
-import axios from 'axios';
+import axios from 'axios'; // Tem que dar "npm install axios"
 
 const AxiosGet = () => {
     // Definindo estado para armazenar os dados dos usuários

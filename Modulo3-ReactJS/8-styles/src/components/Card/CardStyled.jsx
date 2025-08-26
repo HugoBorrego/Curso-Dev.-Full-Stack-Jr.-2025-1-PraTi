@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components" //tem que dar 'npm install styled-components'
 
 const Container = styled.main `
     min-height: 100vh;
