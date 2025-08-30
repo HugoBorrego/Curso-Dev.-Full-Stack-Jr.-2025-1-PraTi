@@ -17,7 +17,5 @@ export const Navbar = ({ cartCount }) => {
                 </div>
             </div>
         </nav>
-
-
     )
 }

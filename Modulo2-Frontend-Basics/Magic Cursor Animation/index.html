@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Magic Particles</title>
+  <style>
+    body {
+      background-color: black;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      cursor: url(https://cdn.custom-cursor.com/db/cursor/32/colorful_cursor.png), default !important;
+      position: relative;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    function randomRange(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    function randomColor() {
+      const colors = [
+        '#e84e66', '#67c69e',
+        '#edf14d', '#f2b84b',
+        '#73a0b8', '#1203f7',
+        '#3f82e6', '#1d2031',
+        '#c93a0d'
+      ];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    class MagicParticle {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.size = randomRange(1, 3);
+        this.color = randomColor();
+        this.opacity = 1;
+        this.speedX = randomRange(-1, 1);
+        this.speedY = randomRange(-1, 1);
+      }
+
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.opacity -= 0.001;
+      }
+
+      draw() {
+        ctx.globalAlpha = this.opacity;
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+      }
+    }
+
+    const particles = [];
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((p, index) => {
+        p.update();
+        p.draw();
+        if (p.opacity <= 0) particles.splice(index, 1);
+      });
+      requestAnimationFrame(animate);
+    }
+
+    canvas.addEventListener('mousemove', (e) => {
+      for (let i = 0; i < 5; i++) {
+        particles.push(new MagicParticle(e.clientX, e.clientY));
+      }
+    });
+
+    animate();
+  </script>
+</body>
+</html>
