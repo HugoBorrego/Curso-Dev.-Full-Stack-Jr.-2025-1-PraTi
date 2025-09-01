@@ -290,26 +290,151 @@ gerarPA()
 
 /* 12. Faça um programa que mostre os 10 primeiros elementos da Sequência de Fibonacci. Ex.: 1, 1, 2, 3, 5, 8, 13, 21. */
 
+function mostrarFibonacci10() {
+    let a = 1, b = 1
+    let sequencia = "1, 1"
+
+    for (let i = 2; i < 10; i++) {
+        const proximo = a + b
+        sequencia += ", " + proximo
+        a = b
+        b = proximo
+    }
+
+    alert(`Os 10 primeiros elementos da sequência de Fibonacci são: ${sequencia}`)
+}
+
+mostrarFibonacci10()
 
 /* 13. Crie um programa que preencha automaticamente (usando lógica, não apenas atribuindo diretamente) um vetor numérico com 15 posições com os primeiros elementos da sequência de Fibonacci. */
 
+function preencherFibonacci15() {
+    const vetor = [1, 1]
+
+    for (let i = 2; i < 15; i++) {
+        vetor[i] = vetor[i - 1] + vetor[i - 2]
+    }
+
+    alert(`Os 15 primeiros elementos da sequência de Fibonacci são: ${vetor.join(", ")}`)
+}
+
+preencherFibonacci15()
 
 /* 14. Faça um programa que leia 7 nomes de pessoas e guarde-os em um vetor. No final, mostre uma listagem com todos os nomes informados, na ordem inversa daquela em que eles foram informados. */
 
+function nomesInvertidos() {
+    const nomes = []
+
+    for (let i = 0; i < 7; i++) {
+        const nome = prompt(`Digite o nome da pessoa ${i + 1}`)
+        nomes.push(nome)
+    }
+
+    alert(`Nomes na ordem inversa: ${nomes.reverse().join(", ")}`)
+}
+
+nomesInvertidos()
 
 /* 15. Desenvolva um programa que leia 10 números inteiros e guarde-os em um vetor. No final, mostre quais são os números pares que foram digitados e em que posições eles estão armazenados. */
 
+function paresComPosicao() {
+    const numeros = []
+    const pares = []
+
+    for (let i = 0; i < 10; i++) {
+        const num = parseInt(prompt(`Digite o número ${i + 1}`))
+        numeros.push(num)
+        if (num % 2 === 0) {
+            pares.push(`Valor: ${num} na posição ${i}`)
+        }
+    }
+
+    alert(`Números pares e suas posições:\n${pares.join("\n")}`)
+}
+
+paresComPosicao()
 
 /* 16. Crie uma lógica que preencha um vetor de 20 posições com números aleatórios (entre 0 e 99) gerados pelo computador. Logo em seguida, mostre os números gerados e depois coloque o vetor em ordem crescente, mostrando no final os valores ordenados. */
 
+function vetorAleatorioOrdenado() {
+    const vetor = []
+
+    for (let i = 0; i < 20; i++) {
+        vetor.push(Math.floor(Math.random() * 100))
+    }
+
+    const ordenado = [...vetor].sort((a, b) => a - b)
+
+    alert(`Números gerados: ${vetor.join(", ")}\nOrdenados: ${ordenado.join(", ")}`)
+}
+
+vetorAleatorioOrdenado()
 
 /* 17. Crie um programa que leia o nome e a idade de 9 pessoas e guarde esses valores em dois vetores, em posições relacionadas. No final, mostre uma listagem contendo apenas os dados das pessoas menores de idade. */
 
+function menoresDeIdade() {
+    const nomes = []
+    const idades = []
+
+    for (let i = 0; i < 9; i++) {
+        nomes[i] = prompt(`Digite o nome da pessoa ${i + 1}`)
+        idades[i] = parseInt(prompt(`Digite a idade de ${nomes[i]}`))
+    }
+
+    let resultado = ""
+
+    for (let i = 0; i < 9; i++) {
+        if (idades[i] < 18) {
+            resultado += `Nome: ${nomes[i]}, Idade: ${idades[i]}\n`
+        }
+    }
+
+    alert(`Pessoas menores de idade:\n${resultado}`)
+}
+
+menoresDeIdade()
+
 /* 18. Crie um registro com o nome do funcionário, cargo e salário. Leia este registro para um funcionário e ao final escreva o conteúdo do registro. */
 
+function registroFuncionario() {
+    const funcionario = {
+        nome: prompt("Digite o nome do funcionário"),
+        cargo: prompt("Digite o cargo do funcionário"),
+        salario: parseFloat(prompt("Digite o salário do funcionário"))
+    }
 
-/* 19. Escrever um programa para ler 5 horários. Validar cada horário fornecendo através de repetição.Escrever cada um deles no formato HH.MM.SS. */
+    alert(`Funcionário:\nNome: ${funcionario.nome}\nCargo: ${funcionario.cargo}\nSalário: R$ ${funcionario.salario.toFixed(2)}`)
+}
 
+registroFuncionario()
+
+/* 19. Escrever um programa para ler 5 horários. Validar cada horário fornecendo através de repetição. Escrever cada um deles no formato HH.MM.SS. */
+
+function lerHorarios() {
+    const horarios = []
+
+    for (let i = 0; i < 5; i++) {
+        let valido = false
+        let h, m, s
+
+        while (!valido) {
+            h = parseInt(prompt(`Digite a hora ${i + 1} (0-23)`))
+            m = parseInt(prompt(`Digite os minutos ${i + 1} (0-59)`))
+            s = parseInt(prompt(`Digite os segundos ${i + 1} (0-59)`))
+
+            if (h >= 0 && h <= 23 && m >= 0 && m <= 59 && s >= 0 && s <= 59) {
+                valido = true
+                horarios.push(`${String(h).padStart(2, '0')}.${String(m).padStart(2, '0')}.${String(s).padStart(2, '0')}`)
+            } else {
+                alert("Horário inválido. Tente novamente.")
+            }
+        }
+    }
+
+    alert(`Horários informados:\n${horarios.join("\n")}`)
+}
+
+lerHorarios()
 
 /* 20. Uma indústria faz a folha mensal de pagamentos de seus 80 empregados baseada no seguinte: existe uma tabela com os dados de cada funcionalidade: matrícula, nome e salário bruto.Escreva um programa que leia e processe a tabela e emita(escreva na tela), cada funcionário, seu contracheque, cujo formato é dado a seguir:
 Matrícula:
@@ -319,24 +444,129 @@ Dedução INSS:
 Salário líquido:
 (Dicas: desconto de 12%, salário líquido é a diferença entre salário bruto e a redução do INSS). */
 
+function folhaPagamento() {
+    for (let i = 0; i < 80; i++) {
+        const matricula = prompt(`Digite a matrícula do funcionário ${i + 1}`)
+        const nome = prompt(`Digite o nome do funcionário ${i + 1}`)
+        const salarioBruto = parseFloat(prompt(`Digite o salário bruto de ${nome}`))
+        const inss = salarioBruto * 0.12
+        const salarioLiquido = salarioBruto - inss
+
+        alert(`Matrícula: ${matricula}\nNome: ${nome}\nSalário bruto: R$ ${salarioBruto.toFixed(2)}\nDedução INSS: R$ ${inss.toFixed(2)}\nSalário líquido: R$ ${salarioLiquido.toFixed(2)}`)
+    }
+}
 
 /* 21. Faça uma função que recebe, por parâmetro, a altura (alt) e o sexo de uma pessoa e retorna o seu peso ideal. Para homens, calcular o peso ideal usando a fórmula: peso ideal = 72.7 x alt - 58 e, para mulheres, peso ideal = 62.1 x alt - 44.7. */
 
+function pesoIdeal(alt, sexo) {
+    if (sexo.toLowerCase() === "m") {
+        return 72.7 * alt - 58
+    } else {
+        return 62.1 * alt - 44.7
+    }
+}
 
 /* 22. A prefeitura de uma cidade fez uma pesquisa entre os seus habitantes, coletando dados sobre o salário e número de filhos. Faça uma função que leia esses dados para um número não determinado de pessoas e retorne a média de salário da população, a média do número de filhos, o maior salário e o percentual de pessoas com salário até R$ 350,00. */
 
+function pesquisaPrefeitura() {
+    let totalSalario = 0
+    let totalFilhos = 0
+    let maiorSalario = 0
+    let abaixo350 = 0
+    let contador = 0
+    let continuar = true
+
+    while (continuar) {
+        const salario = parseFloat(prompt("Digite o salário"))
+        const filhos = parseInt(prompt("Digite o número de filhos"))
+        totalSalario += salario
+        totalFilhos += filhos
+        if (salario > maiorSalario) maiorSalario = salario
+        if (salario <= 350) abaixo350++
+        contador++
+        continuar = confirm("Deseja continuar?")
+    }
+
+    const mediaSalario = totalSalario / contador
+    const mediaFilhos = totalFilhos / contador
+    const percentualAbaixo350 = (abaixo350 / contador) * 100
+
+    alert(`Média de salário: R$ ${mediaSalario.toFixed(2)}\nMédia de filhos: ${mediaFilhos.toFixed(2)}\nMaior salário: R$ ${maiorSalario.toFixed(2)}\n% com salário até R$350: ${percentualAbaixo350.toFixed(2)}%`)
+}
 
 /* 23. Criar e imprimir a matriz identidade MI[1..7,1..7] em que todos os elementos da diagonal principal são iguais a 1 e os demais são nulos. */
 
+function matrizIdentidade() {
+    const matriz = []
+
+    for (let i = 0; i < 7; i++) {
+        matriz[i] = []
+        for (let j = 0; j < 7; j++) {
+            matriz[i][j] = i === j ? 1 : 0
+        }
+    }
+
+    alert(matriz.map(linha => linha.join(" ")).join("\n"))
+}
 
 /* 24. Dada uma matriz M[1..6,1..8], criar um vetor C que contenha, em cada posição, a quantidade de elementos negativos da linha correspondente de M. */
 
+function contarNegativos() {
+    const matriz = []
+    const vetorC = []
+
+    for (let i = 0; i < 6; i++) {
+        matriz[i] = []
+        let negativos = 0
+        for (let j = 0; j < 8; j++) {
+            const valor = parseFloat(prompt(`Digite o valor M[${i + 1}][${j + 1}]`))
+            matriz[i][j] = valor
+            if (valor < 0) negativos++
+        }
+        vetorC[i] = negativos
+    }
+
+    alert(`Quantidade de negativos por linha: ${vetorC.join(", ")}`)
+}
+
+contarNegativos()
 
 /* 25. Faça um algoritmo que leia uma matriz de 15 X 20 de números reais e mostre a soma de cada coluna separadamente. */
 
+function somaColunas() {
+    const matriz = []
+    const somaColuna = Array(20).fill(0)
+
+    for (let i = 0; i < 15; i++) {
+        matriz[i] = []
+        for (let j = 0; j < 20; j++) {
+            const valor = parseFloat(prompt(`Digite M[${i + 1}][${j + 1}]`))
+            matriz[i][j] = valor
+            somaColuna[j] += valor
+        }
+    }
+
+    alert(`Soma de cada coluna:\n${somaColuna.map((soma, i) => `Coluna ${i + 1}: ${soma.toFixed(2)}`).join("\n")}`)
+}
 
 /* 26. Dadas duas matrizes numéricas A[1..3, 1..5] e B[1..3, 1..5], calcular a matriz produto P[1..3, 1..5]. */
 
+function produtoMatrizes() {
+    const A = [], B = [], P = []
+
+    for (let i = 0; i < 3; i++) {
+        A[i] = [], B[i] = [], P[i] = []
+        for (let j = 0; j < 5; j++) {
+            A[i][j] = parseFloat(prompt(`Digite A[${i + 1}][${j + 1}]`))
+            B[i][j] = parseFloat(prompt(`Digite B[${i + 1}][${j + 1}]`))
+            P[i][j] = A[i][j] * B[i][j]
+        }
+    }
+
+    alert(`Matriz produto:\n${P.map(linha => linha.join(" ")).join("\n")}`)
+}
+
+produtoMatrizes()
 
 /* 27. Elaborar um algoritmo que leia uma matriz M(6,6) e um valor A. Após a leitura, multiplicar a matriz M pelo valor A e colocar os valores da matriz multiplicados por A em um vetor V(36).Escrever o vetor V no final. */
 

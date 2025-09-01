@@ -10,6 +10,7 @@ export const Navbar = ({ cartCount }) => {
       <button onClick={toggleTheme} aria-label="Alternar tema" className="theme-toggle">
         {theme === "light" ? "🌞" : "🌙"}
       </button>
+      <h1>🌊 Rota das Ondas🏄</h1>
       <div className="cart-badge" aria-label={`Carrinho com ${cartCount} itens`}>
         🛒 {cartCount}
       </div>

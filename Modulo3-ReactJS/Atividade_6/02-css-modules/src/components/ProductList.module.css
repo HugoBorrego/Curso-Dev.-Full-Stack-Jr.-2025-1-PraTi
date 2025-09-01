@@ -1,0 +1,34 @@
+.productList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  padding: 20px;
+}
+
+/* ≤480px: 1 coluna */
+@media (max-width: 480px) {
+  .productList {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 481–768px: 2 colunas */
+@media (min-width: 481px) and (max-width: 768px) {
+  .productList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 769–1024px: 3 colunas */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .productList {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ≥1025px: 4 colunas */
+@media (min-width: 1025px) {
+  .productList {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
