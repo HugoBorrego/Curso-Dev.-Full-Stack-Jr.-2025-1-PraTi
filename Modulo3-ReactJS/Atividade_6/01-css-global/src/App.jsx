@@ -1,15 +1,23 @@
+// App.jsx
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { ThemeProvider } from "./context/ThemeContext"
+import { CartProvider } from "./context/CartContext"
 import { Navbar } from "./components/Navbar"
 import { ProductList } from "./components/ProductList"
+import { CartPage } from "./pages/CartPage"
 
 export default function App() {
   return (
     <ThemeProvider>
-      <Navbar cartCount={3} />
-      <main style={{ padding: "2rem", display: "flex", justifyContent: "center" }}>
-        <h1>Bem-vindo à nossa loja 🛍️</h1>
-      </main>
-      <ProductList />
+      <CartProvider>
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<ProductList />} />
+            <Route path="/cart" element={<CartPage />} />
+          </Routes>
+        </Router>
+      </CartProvider>
     </ThemeProvider>
   )
 }

@@ -1,15 +1,24 @@
 :root {
   --bg-color: #ffffff;
   --text-color: #000000;
+  --card-bg: #f9f9f9;
+  --card-shadow: rgba(0,0,0,0.1);
+  --btn-bg: #007bff;
+  --btn-text: #ffffff;
 }
 
 [data-theme="dark"] {
   --bg-color: #121212;
   --text-color: #f5f5f5;
+  --card-bg: #1e1e1e;
+  --card-shadow: rgba(255,255,255,0.1);
+  --btn-bg: #3399ff;
+  --btn-text: #ffffff;
 }
 
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
+  font-family: sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }

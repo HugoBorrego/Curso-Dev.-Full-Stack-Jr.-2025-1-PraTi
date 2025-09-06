@@ -15,6 +15,17 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
+.navbar-title {
+  text-decoration: none;
+  color: var(--text-color);
+  transition: opacity 0.2s ease;
+}
+
+.navbar-title:hover {
+  opacity: 0.8;
+}
+
+
 .navbar h1 {
   font-size: 1.8rem;
   margin: 0;
