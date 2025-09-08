@@ -66,8 +66,10 @@ public class ExemplosDeConstrutores {
         ExemplosDeConstrutores exemplo5 = ExemplosDeConstrutores.criarInstancia();
 
         // Exibindo os dados das instâncias criadas
+        exemplo1.exibirDados();
         exemplo2.exibirDados();
         exemplo3.exibirDados();
         exemplo4.exibirDados();
+        exemplo5.exibirDados();
     }
 }

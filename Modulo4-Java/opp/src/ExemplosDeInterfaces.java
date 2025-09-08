@@ -1,5 +1,3 @@
-package InterfaceExamples;
-
 public class ExemplosDeInterfaces {
 
     // 1. Interface funcional

@@ -1,4 +1,3 @@
-// App.jsx
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { ThemeProvider } from "./context/ThemeContext"
 import { CartProvider } from "./context/CartContext"

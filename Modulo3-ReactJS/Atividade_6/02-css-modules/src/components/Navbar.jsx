@@ -1,26 +1,36 @@
 import { useContext } from "react"
 import { ThemeContext } from "../context/ThemeContext"
-import styles from './Navbar.module.css'
+import { CartContext } from "../context/CartContext"
+import { useNavigate, Link } from "react-router-dom"
+import "./Navbar.css"
 
-export const Navbar = ({ cartCount }) => {
+export const Navbar = () => {
   const { theme, toggleTheme } = useContext(ThemeContext)
+  const { cart } = useContext(CartContext)
+  const navigate = useNavigate()
 
   return (
-    <nav className={styles.navbar}>
+    <nav className="navbar">
       <button
         onClick={toggleTheme}
         aria-label="Alternar tema"
-        className={styles.themeToggle}
+        className="theme-toggle"
       >
         {theme === "light" ? "🌞" : "🌙"}
       </button>
-      <h1 className={styles.title}>🌊 Rota das Ondas🏄</h1>
-      <div
-        className={styles.cartBadge}
-        aria-label={`Carrinho com ${cartCount} itens`}
+
+      {/* Link para voltar para a Home */}
+      <Link to="/" className="navbar-title">
+        <h1>🌊 Rota das Ondas🏄</h1>
+      </Link>
+
+      <button
+        className="cart-badge"
+        aria-label={`Carrinho com ${cart.length} itens`}
+        onClick={() => navigate("/cart")}
       >
-        🛒 {cartCount}
-      </div>
+        🛒 {cart.length}
+      </button>
     </nav>
   )
 }
