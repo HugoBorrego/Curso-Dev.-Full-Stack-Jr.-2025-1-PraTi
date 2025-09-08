@@ -1,45 +1,73 @@
-public class ExemploDeConstrutores {
+public class ExemplosDeConstrutores {
 
-    static {
-        System.out.println("Inicializando");
+    // 1. Construtor padrão (default)
+    // Este construtor é automaticamente fornecido pelo compilador se nenhum outro construtor for definido
+    public ExemplosDeConstrutores() {
+        System.out.println("Construtor padrão chamado.");
     }
 
-    public ExemploDeConstrutores() {
-        System.out.println("Construtor Padrão");
-    }
-
-    private int idade;
+    // 2. Construtor parametrizado
+    // Recebe argumentos para inicializar os atributos da classe
     private String nome;
+    private int idade;
 
-    public ExemploDeConstrutores(int idade, String nome) {
-        this.idade = idade;
-        this.nome = nome;
-        System.out.println("Construtor parametrizado: Nome " + nome + " idade " + idade + " idade");
+    public ExemplosDeConstrutores(String nome, int idade) {
+        this.nome = nome; // Inicializa o atributo 'nome' com o valor do argumento
+        this.idade = idade; // Inicializa o atributo 'idade' com o valor do argumento
+        System.out.println("Construtor parametrizado chamado: Nome = " + nome + ", Idade = " + idade);
     }
 
-    public ExemploDeConstrutores(String nome) {
-        this(0, nome );
-        System.out.println();
+    // 3. Construtor sobrecarregado
+    // Várias versões do construtor com diferentes listas de parâmetros
+    public ExemplosDeConstrutores(String nome) {
+        this(nome, 0); // Chama outro construtor da mesma classe usando `this`
+        System.out.println("Construtor sobrecarregado chamado com apenas o nome: Nome = " + nome);
     }
 
-    public ExemploDeConstrutores(ExemploDeConstrutores outro) {
+    // 4. Construtor de cópia
+    // Cria uma nova instância copiando os valores de outra instância
+    public ExemplosDeConstrutores(ExemplosDeConstrutores outro) {
         this.nome = outro.nome;
         this.idade = outro.idade;
-        System.out.println("Construtor Cópia: Nome " + nome + " idade " + idade + " idade");
+        System.out.println("Construtor de cópia chamado: Nome = " + nome + ", Idade = " + idade);
     }
 
-    private ExemploDeConstrutores(boolean flag) {
-        System.out.println("Construtor flag: " + flag);
+    // 5. Construtor privado
+    // Não pode ser acessado fora da classe, útil em padrões como Singleton
+    private ExemplosDeConstrutores(boolean flag) {
+        System.out.println("Construtor privado chamado. Flag = " + flag);
     }
 
-    public static ExemploDeConstrutores criarInstancia() {
-        return new ExemploDeConstrutores(true);
+    // Método estático para criar instância com construtor privado (padrão Singleton)
+    public static ExemplosDeConstrutores criarInstancia() {
+        return new ExemplosDeConstrutores(true);
     }
 
+    // Método para exibir os atributos da instância
+    public void exibirDados() {
+        System.out.println("Nome: " + nome + ", Idade: " + idade);
+    }
+
+    // Método principal para demonstrar os exemplos
     public static void main(String[] args) {
-        ExemploDeConstrutores exemplo1 = new ExemploDeConstrutores();
-        ExemploDeConstrutores exemplo2 = new ExemploDeConstrutores(20, "Joelinton");
-        ExemploDeConstrutores exemplo3 = new ExemploDeConstrutores("Miguel");
-        ExemploDeConstrutores exemplo4 = new ExemploDeConstrutores(exemplo2);
+        // 1. Construtor padrão
+        ExemplosDeConstrutores exemplo1 = new ExemplosDeConstrutores();
+
+        // 2. Construtor parametrizado
+        ExemplosDeConstrutores exemplo2 = new ExemplosDeConstrutores("João", 25);
+
+        // 3. Construtor sobrecarregado
+        ExemplosDeConstrutores exemplo3 = new ExemplosDeConstrutores("Maria");
+
+        // 4. Construtor de cópia
+        ExemplosDeConstrutores exemplo4 = new ExemplosDeConstrutores(exemplo2);
+
+        // 5. Construtor privado (acessado por método estático)
+        ExemplosDeConstrutores exemplo5 = ExemplosDeConstrutores.criarInstancia();
+
+        // Exibindo os dados das instâncias criadas
+        exemplo2.exibirDados();
+        exemplo3.exibirDados();
+        exemplo4.exibirDados();
     }
 }
