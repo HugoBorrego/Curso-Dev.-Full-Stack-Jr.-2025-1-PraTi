@@ -1,17 +1,17 @@
-.cart-page {
+.cartPage {
   padding: 2rem;
   max-width: 900px;
   margin: 0 auto;
   color: var(--text-color);
 }
 
-.cart-list {
+.cartList {
   display: grid;
   gap: 16px;
   margin: 20px 0;
 }
 
-.cart-card {
+.cartCard {
   display: flex;
   align-items: center;
   background: var(--card-bg);
@@ -23,11 +23,11 @@
   transition: transform 0.2s ease;
 }
 
-.cart-card:hover {
+.cartCard:hover {
   transform: scale(1.01);
 }
 
-.cart-card img {
+.cartCard img {
   width: 80px;
   height: 80px;
   object-fit: contain;
@@ -35,7 +35,7 @@
   background: #fff;
 }
 
-.cart-info {
+.cartInfo {
   flex: 1;
 }
 
@@ -48,17 +48,17 @@
   transition: background-color 0.2s, transform 0.2s;
 }
 
-.btn.remove {
+.remove {
   background: #dc3545;
   color: white;
 }
 
-.btn.remove:hover {
+.remove:hover {
   background: #b02a37;
   transform: scale(1.05);
 }
 
-.btn.back {
+.back {
   display: inline-block;
   margin-top: 20px;
   background: var(--btn-bg);
@@ -67,6 +67,6 @@
   text-align: center;
 }
 
-.btn.back:hover {
+.back:hover {
   opacity: 0.9;
 }
