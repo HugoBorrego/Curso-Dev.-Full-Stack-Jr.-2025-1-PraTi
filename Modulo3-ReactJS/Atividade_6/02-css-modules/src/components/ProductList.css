@@ -59,20 +59,28 @@
   padding: 4px 8px;
   border-radius: 12px;
   font-size: 0.8rem;
-  background-color: #eee;
+  background-color: #707070;
   text-transform: uppercase;
 }
 
-.tag.popular {
-  background-color: #ffdd57;
+.tag.romance {
+  background-color: #eb0081;
 }
 
-.tag.premium {
-  background-color: #c0c0c0;
+.tag.aventura {
+  background-color: #00b49c;
 }
 
-.tag.intermediário {
-  background-color: #add8e6;
+.tag.drama {
+  background-color: #0083af;
+}
+
+.tag.fantasia {
+  background-color: #4faf00;
+}
+
+.tag.ação {
+  background-color: #d60000;
 }
 
 .btn.solid {

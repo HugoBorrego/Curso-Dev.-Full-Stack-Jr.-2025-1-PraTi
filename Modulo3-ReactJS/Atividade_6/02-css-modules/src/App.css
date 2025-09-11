@@ -22,3 +22,12 @@ body {
   font-family: sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+button {
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+.theme-toggle {
+  transition: transform 0.2s ease, color 0.3s ease;
+}

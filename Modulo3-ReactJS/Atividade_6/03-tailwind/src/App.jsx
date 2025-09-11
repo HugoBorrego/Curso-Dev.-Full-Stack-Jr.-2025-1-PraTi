@@ -4,6 +4,7 @@ import { CartProvider } from "./context/CartContext"
 import { Navbar } from "./components/Navbar"
 import { ProductList } from "./components/ProductList"
 import { CartPage } from "./pages/CartPage"
+import "./App.css"
 
 export default function App() {
   return (

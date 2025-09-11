@@ -1,58 +1,58 @@
 export const products = [
   {
-    title: "Prancha Fish 5'8",
-    price: 1299.99,
+    title: "Corações de Ferro",
+    price: 29.90,
     rating: 4,
-    tag: "Popular",
-    image: "https://www.1974surfboards.com/wp-content/uploads/2018/06/prancha-surf-fish-XPS-epoxy.jpg"
+    tag: "Ação",
+    image: "https://tse1.mm.bing.net/th/id/OIP.YQv_CrHcHvj8Ck17yWeaRQHaEN?rs=1&pid=ImgDetMain&o=7&rm=3"
   },
   {
-    title: "Prancha Longboard 9'0",
-    price: 1899.90,
+    title: "Titanic",
+    price: 34.90,
     rating: 5,
-    tag: "Premium",
-    image: "https://images.tcdn.com.br/img/img_prod/1224276/prancha_de_longboard_progressivo_freerider_363_1_36752bca76563067c71129a2b9ab057f.jpg"
+    tag: "Romance",
+    image: "https://th.bing.com/th/id/R.ee8b582a4fc555aec32eb95a9e79fede?rik=l5KuHKnHjkGpfg&riu=http%3a%2f%2f2.bp.blogspot.com%2f-e4mSqMksTqw%2fVV4BxONRIdI%2fAAAAAAAABDQ%2fTSRAafKb-kc%2fs1600%2ftitanic-casal.jpg&ehk=PyUNAe3bcehG7Hday3CBlrPD3uRDVgriG4RKZNDOizI%3d&risl=&pid=ImgRaw&r=0"
   },
   {
-    title: "Prancha Funboard 7'2",
-    price: 1499.50,
-    rating: 3,
-    tag: "Intermediário",
-    image: "https://images.tcdn.com.br/img/img_prod/1133757/prancha_de_surf_de_madeira_caracoli_mantarraya_funboard_7_6_x_22_1_2_x_2_7_8_x_58l_677_1_6f5c817ca915df92db9043917aa29149.jpg"
-  },
-  {
-    title: "Prancha Retro Twin 5'10",
-    price: 1399.00,
-    rating: 4,
-    tag: "Popular",
-    image: "https://tse4.mm.bing.net/th/id/OIP.IM2seaYeHiUi-mHMXWQrwQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
-  },
-  {
-    title: "Prancha Gun 7'6",
-    price: 2099.99,
+    title: "Harry Potter e o Prisioneiro de Azkaban",
+    price: 39.90,
     rating: 5,
-    tag: "Premium",
-    image: "https://th.bing.com/th/id/R.4e9eb9b50c30ae831332abd912921bc9?rik=g6xuhVrJ57y3eA&pid=ImgRaw&r=0"
+    tag: "Fantasia",
+    image: "https://tse3.mm.bing.net/th/id/OIP.nQTNrMTLfYdXaE7-eZHcsAHaD2?rs=1&pid=ImgDetMain&o=7&rm=3"
   },
   {
-    title: "Prancha Mini Malibu 7'0",
-    price: 1599.90,
-    rating: 4,
-    tag: "Intermediário",
-    image: "https://contents.mediadecathlon.com/m11509473/k$e847166dd180aafc1295814bd48bc090/sq/storm-surfboard-mini-malibu-70-beluga-lb2.jpg?format=auto&f=800x0"
-    },
-  {
-    title: "Prancha Shortboard 5'0",
-    price: 1099.99,
+    title: "Batman: O Cavaleiro das Trevas",
+    price: 32.90,
     rating: 5,
-    tag: "Premium",
-    image: "https://tse2.mm.bing.net/th/id/OIP.WUOjSmXw-0w3vfgxQoGz7QAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
+    tag: "Super-herói",
+    image: "https://th.bing.com/th/id/R.4871fa9f73219cad2611856c1386262c?rik=kbGhIpXJ6M1ldQ&pid=ImgRaw&r=0"
   },
   {
-    title: "Prancha Fish 5'8",
-    price: 1399.90,
+    title: "A Onda de 100 Pés",
+    price: 27.90,
     rating: 4,
-    tag: "Intermediário",
-    image: "https://img.clasf.com.br/2021/01/14/Prancha-de-Surf-MSD-Surfboards-Fish-Retr-Biquilha-5-10-20210114220329.0063220015.jpg"
+    tag: "Drama",
+    image: "https://hardcore.com.br/wp-content/uploads/sites/21/2024/01/kwwcnca33lcuzhwxydtolp7j2l.jpeg"
+  },
+  {
+    title: "O Senhor dos Anéis: A Sociedade do Anel",
+    price: 39.90,
+    rating: 5,
+    tag: "Aventura",
+    image: "https://tse2.mm.bing.net/th/id/OIP.dAyBROHzZzAlFVQ5DddqlgHaEE?rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    title: "Velozes e Furiosos 7",
+    price: 29.90,
+    rating: 4,
+    tag: "Ação",
+    image: "https://th.bing.com/th/id/R.3472ae61df1274546ddcce9e1e73f11e?rik=6Mrj73KRgvOX1A&pid=ImgRaw&r=0"
+  },
+  {
+    title: "Tropa de Elite",
+    price: 31.90,
+    rating: 4,
+    tag: "Ação",
+    image: "https://th.bing.com/th/id/R.f7df2f0594e97e4d01e8ce75b858f524?rik=eeT9taSWtnYG5Q&riu=http%3a%2f%2f2.bp.blogspot.com%2f_5yoH7bxgL0w%2fS2BrVagSYdI%2fAAAAAAAAI_Q%2fQWQ_BwHXytc%2fw1200-h630-p-k-no-nu%2fbope_tropa_de_elite_-_papel_de_parede2.jpg&ehk=7gE3VeeFHTM%2bSHlc0%2fhEQmTXNwDK4ZdNUN7RJRP0fvA%3d&risl=&pid=ImgRaw&r=0"
   }
 ]
