@@ -21,7 +21,7 @@ export const Navbar = () => {
 
       {/* Link para voltar para a Home */}
       <Link to="/" className="navbar-title">
-        <h1>🌊 Rota das Ondas🏄</h1>
+        <h1>🌊 Rota das Ondas 🏄</h1>
       </Link>
 
       <button

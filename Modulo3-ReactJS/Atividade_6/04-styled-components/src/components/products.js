@@ -1,58 +1,58 @@
 export const products = [
   {
-    title: "Prancha Fish 5'8",
-    price: 1299.99,
-    rating: 4,
-    tag: "Popular",
-    image: "https://www.1974surfboards.com/wp-content/uploads/2018/06/prancha-surf-fish-XPS-epoxy.jpg"
-  },
-  {
-    title: "Prancha Longboard 9'0",
-    price: 1899.90,
+    title: "Notebook Dell Inspiron 15",
+    price: 4299.99,
     rating: 5,
     tag: "Premium",
-    image: "https://images.tcdn.com.br/img/img_prod/1224276/prancha_de_longboard_progressivo_freerider_363_1_36752bca76563067c71129a2b9ab057f.jpg"
+    image: "https://a-static.mlcdn.com.br/1500x1500/notebook-dell-inspiron-15-3000-3501-a25p-intel-core-i3-4gb-256gb-ssd-156-led-windows-10/magazineluiza/228079200/64303ff30b11317281dacdad7256b755.jpg"
   },
   {
-    title: "Prancha Funboard 7'2",
-    price: 1499.50,
+    title: "Mouse Logitech G203 RGB",
+    price: 149.90,
+    rating: 4,
+    tag: "Popular",
+    image: "https://goldentechstore.com.ar/wp-content/uploads/MOU022.jpg"
+  },
+  {
+    title: "Teclado Mecânico Redragon Kumara",
+    price: 229.50,
+    rating: 4,
+    tag: "Intermediário",
+    image: "https://m.media-amazon.com/images/I/61nvk16RZrL._AC_SL1500_.jpg"
+  },
+  {
+    title: "Soundbar JBL Bar 2.0",
+    price: 699.00,
+    rating: 5,
+    tag: "Premium",
+    image: "https://tse1.mm.bing.net/th/id/OIP.0XIM8d54knxCTga1qsNrewHaG4?rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    title: "Headset HyperX Cloud Stinger",
+    price: 299.99,
+    rating: 4,
+    tag: "Popular",
+    image: "https://cdn.shopify.com/s/files/1/1312/6345/products/HyperXCloudStingerGamingHeadset_PC_2_1600x.jpg?v=1603429693"
+  },
+  {
+    title: "Webcam Logitech C920 HD",
+    price: 349.90,
+    rating: 5,
+    tag: "Premium",
+    image: "https://resource.logitech.com/w_800,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/webcams/c920/gallery/c920-gallery-1.png"
+  },
+  {
+    title: "Impressora HP DeskJet 2776",
+    price: 499.99,
+    rating: 4,
+    tag: "Intermediário",
+    image: "https://tse4.mm.bing.net/th/id/OIP.ee8oMcfdQpLONldESzUumAHaEB?rs=1&pid=ImgDetMain&o=7&rm=3"
+  },
+  {
+    title: "Mousepad Gamer RGB XL",
+    price: 89.90,
     rating: 3,
-    tag: "Intermediário",
-    image: "https://images.tcdn.com.br/img/img_prod/1133757/prancha_de_surf_de_madeira_caracoli_mantarraya_funboard_7_6_x_22_1_2_x_2_7_8_x_58l_677_1_6f5c817ca915df92db9043917aa29149.jpg"
-  },
-  {
-    title: "Prancha Retro Twin 5'10",
-    price: 1399.00,
-    rating: 4,
     tag: "Popular",
-    image: "https://tse4.mm.bing.net/th/id/OIP.IM2seaYeHiUi-mHMXWQrwQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
-  },
-  {
-    title: "Prancha Gun 7'6",
-    price: 2099.99,
-    rating: 5,
-    tag: "Premium",
-    image: "https://th.bing.com/th/id/R.4e9eb9b50c30ae831332abd912921bc9?rik=g6xuhVrJ57y3eA&pid=ImgRaw&r=0"
-  },
-  {
-    title: "Prancha Mini Malibu 7'0",
-    price: 1599.90,
-    rating: 4,
-    tag: "Intermediário",
-    image: "https://contents.mediadecathlon.com/m11509473/k$e847166dd180aafc1295814bd48bc090/sq/storm-surfboard-mini-malibu-70-beluga-lb2.jpg?format=auto&f=800x0"
-    },
-  {
-    title: "Prancha Shortboard 5'0",
-    price: 1099.99,
-    rating: 5,
-    tag: "Premium",
-    image: "https://tse2.mm.bing.net/th/id/OIP.WUOjSmXw-0w3vfgxQoGz7QAAAA?rs=1&pid=ImgDetMain&o=7&rm=3"
-  },
-  {
-    title: "Prancha Fish 5'8",
-    price: 1399.90,
-    rating: 4,
-    tag: "Intermediário",
-    image: "https://img.clasf.com.br/2021/01/14/Prancha-de-Surf-MSD-Surfboards-Fish-Retr-Biquilha-5-10-20210114220329.0063220015.jpg"
+    image: "https://tse2.mm.bing.net/th/id/OIP.OlyRyWea1pSC8dLTz1GqrAHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
   }
 ]

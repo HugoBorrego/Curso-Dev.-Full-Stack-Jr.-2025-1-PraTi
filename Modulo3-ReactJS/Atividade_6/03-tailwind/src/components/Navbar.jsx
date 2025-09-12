@@ -14,7 +14,7 @@ export const Navbar = () => {
       <button
         onClick={toggleTheme}
         aria-label="Alternar tema"
-        className="text-yellow-400 text-xl hover:scale-110 transition-transform"
+        className="text-yellow-400 text-xl hover:scale-110 transition-transform focus:outline-none focus:ring-0"
       >
         {theme === "light" ? "🌞" : "🌙"}
       </button>
