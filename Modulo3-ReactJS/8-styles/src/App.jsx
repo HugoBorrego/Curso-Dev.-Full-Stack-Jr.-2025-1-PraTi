@@ -26,3 +26,5 @@ function App() {
 }
 
 export default App
+
+// npm install tailwindcss @tailwindcss/vite para instalar o TailwindCSS

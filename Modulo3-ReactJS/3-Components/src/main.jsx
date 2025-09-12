@@ -10,6 +10,8 @@ import LifeCycleFunctionalComponent from './components/LifeCycleFunctionalCompon
 
 import ViaCepFunctional from './components/ViaCepFunctional'
 
+import BotaoCiclico from './components/BotaoCiclico'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
@@ -18,5 +20,6 @@ createRoot(document.getElementById('root')).render(
     <LifeCycleClassComponent />
     <LifeCycleFunctionalComponent />
     <ViaCepFunctional cep='12081410' />
+    <BotaoCiclico />
   </StrictMode>,
 )
