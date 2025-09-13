@@ -59,20 +59,20 @@
   padding: 4px 8px;
   border-radius: 12px;
   font-size: 0.8rem;
-  background-color: #eee;
+  background-color: #9e9e9e;
   text-transform: uppercase;
 }
 
 .tag.popular {
-  background-color: #ffdd57;
+  background-color: #ffd118;
 }
 
 .tag.premium {
-  background-color: #c0c0c0;
+  background-color: #ff0d0d;
 }
 
 .tag.intermediário {
-  background-color: #add8e6;
+  background-color: #07c1ff;
 }
 
 .btn.solid {
