@@ -8,16 +8,14 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) {
         List<Funcionario> funcionarios = Arrays.asList(
-                new Funcionario("Alucard", 50000, "Vampiro", 2000),
                 new Funcionario("Peter Parker", 1200, "Fotógrafo", 20),
                 new Funcionario("Mary Jane", 3000, "Atriz", 21),
                 new Funcionario("Bruce Wayne", 30000, "CEO", 40),
-                new Funcionario("Cloud Strife", 1000, "Soldier", 19),
                 new Funcionario("Johnny Storm", 5000, "Herói", 23),
-                new Funcionario("Ronaldo", 3000, "Desenvolvedor Júnior", 19),
-                new Funcionario("Marcos", 5000, "Desenvolvedor Pleno", 21),
-                new Funcionario("Édison", 7000, "Desenvolvedor Sênior", 23),
-                new Funcionario("Paula", 10000, "Tech Lead", 24)
+                new Funcionario("Pedro", 3000, "Desenvolvedor Júnior", 19),
+                new Funcionario("Gabriel", 5000, "Desenvolvedor Pleno", 21),
+                new Funcionario("Jorge", 7000, "Desenvolvedor Sênior", 23),
+                new Funcionario("Maria", 10000, "Tech Lead", 24)
         );
 
         //  Filtre e exiba os nomes e cargos dos funcionários com mais de 30 anos.
