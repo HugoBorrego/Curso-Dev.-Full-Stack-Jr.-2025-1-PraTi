@@ -1,0 +1,7 @@
+Exercício 6 — Imutabilidade e Objetos de Valor (Carrinho de Compras)
+
+Crie o objeto de valor imutável Dinheiro (valor BigDecimal e enum Moeda) com
+equals/hashCode coerentes. Modele Produto, ItemCarrinho e um Carrinho cuja
+lista de itens seja imutável: operações de adicionar/remover/aplicar cupom retornam
+um novo carrinho. Valide quantidades > 0, proíba valores negativos e limite cupons
+a 30% com arredondamento bancário. Demonstre o fluxo completo em testes.
