@@ -2,12 +2,27 @@ package Exercicio2;
 
 public class  Main {
     public static void main(String[] args) {
+        Desconto produto = new Desconto("Notebook", 3000.00, 10);
 
+        System.out.println("Preço original: R$" + produto.getPreco());
+
+        try {
+            produto.aplicarDesconto(20);
+            System.out.println("Preço com 20% de desconto: R$" + produto.getPreco());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro ao aplicar desconto: " + e.getMessage());
+        }
+
+        try {
+            produto.aplicarDesconto(60); // inválido
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro ao aplicar desconto: " + e.getMessage());
+        }
+
+        try {
+            produto.aplicarDesconto(-10); // inválido
+        } catch (IllegalArgumentException e) {
+            System.out.println("Erro ao aplicar desconto: " + e.getMessage());
+        }
     }
 }
-
-/*
-Exercício 2 — Encapsulamento com Validação de Regra (Desconto)
-
-Estenda Produto com o metodo aplicarDesconto(double porcentagem). Permita apenas valores entre 0 e 50 (inclusive) e lance exceção (IllegalArgumentException ou DescontoInvalidoException) se a regra for violada. Mostre, em um main ou testes, o preço antes/depois do desconto e a reação a entradas inválidas.
-*/
