@@ -1,13 +1,23 @@
 package Exercicio3;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
+        List<Funcionario> funcionarios = new ArrayList<>();
 
+        funcionarios.add(new Gerente("Alice", new BigDecimal("10000")));
+        funcionarios.add(new Desenvolvedor("Bob", new BigDecimal("8000")));
+        funcionarios.add(new Gerente("Carlos", new BigDecimal("12000")));
+        funcionarios.add(new Desenvolvedor("Diana", new BigDecimal("7000")));
+
+        for (Funcionario f : funcionarios) {
+            System.out.println("Funcionário: " + f.getNome());
+            System.out.println("Salário: R$" + f.getSalario());
+            System.out.println("Bônus: R$" + f.calcularBonus());
+            System.out.println("---------------------------");
+        }
     }
 }
-
-/*
-Exercício 3 — Herança (Hierarquia de Funcionários)
-
-Crie a classe base Funcionario com protected String nome e protected BigDecimal salario (com getters). Crie Gerente e Desenvolvedor que sobrescrevem calcularBonus(): 20% do salário para gerente e 10% para desenvolvedor. Garanta que salários sejam positivos. Em um programa, coloque diferentes funcionários em uma coleção do tipo List<Funcionario> e exiba o bônus de cada um.
-*/
