@@ -1,4 +1,4 @@
-package spring_basics;
+package spring_basics.iocbasics;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Primary;
