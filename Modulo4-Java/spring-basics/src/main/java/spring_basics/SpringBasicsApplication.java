@@ -1,4 +1,4 @@
-package com.example.spring_basics;
+package spring_basics;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

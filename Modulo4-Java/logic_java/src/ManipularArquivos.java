@@ -11,7 +11,7 @@ public class ManipularArquivos {
 //                Files.createFile(arquivo);
 //            }
 //
-//            String conteudo = "Olá, o Grêmio ganhou!";
+//            String conteudo = "Surfe é melhor que futebol!";
 //            Files.write(arquivo, conteudo.getBytes());
 //
 //            System.out.println("Arquivo criado e escrito com sucesso!");
@@ -49,7 +49,9 @@ public class ManipularArquivos {
 //        Path destino = Paths.get("arquivoAlterado.txt");
 //
 //        Files.move(origem, destino);
-
-//Implemente, em Java 21, um utilitário de linha de comando chamado CopyInfo que recebe dois caminhos: origem e destino. Se a origem não existir ou não for um arquivo regular, mostre uma mensagem de erro amigável. Se o destino for um diretório, salve o arquivo com o mesmo nome da origem dentro dele; se o arquivo de destino já existir, só permita sobrescrever quando a opção --force for passada (caso contrário, encerre informando que o arquivo já existe).
     }
 }
+
+/*
+    Implemente, em Java 21, um utilitário de linha de comando chamado CopyInfo que recebe dois caminhos: origem e destino. Se a origem não existir ou não for um arquivo regular, mostre uma mensagem de erro amigável. Se o destino for um diretório, salve o arquivo com o mesmo nome da origem dentro dele; se o arquivo de destino já existir, só permita sobrescrever quando a opção --force for passada (caso contrário, encerre informando que o arquivo já existe).
+*/
