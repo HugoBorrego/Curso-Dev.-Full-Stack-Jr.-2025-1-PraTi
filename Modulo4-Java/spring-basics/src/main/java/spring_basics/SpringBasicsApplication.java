@@ -6,7 +6,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import spring_basics.exercicioIoc.MaquinaSorveteIoc;
+import org.springframework.context.annotation.Profile;
+import spring_basics.exercicio2IoC.*;
+import spring_basics.exercicio2IoC.TotalStore;
+
+import java.math.BigDecimal;
+import java.nio.file.Path;
 
 
 @SpringBootApplication
@@ -18,10 +23,32 @@ public class SpringBasicsApplication {
 
 
     @Bean
-    CommandLineRunner init(MaquinaSorveteIoc maquina) {
-        return args -> {
-            System.out.println("" + maquina.servir());
-        };
+    public MessageSink messageSink() {
+        return new ConsoleMesageSink();
     }
 
+    @Bean
+    @Profile("!file")
+    public TotalStore inMemoryStore() {
+        return new InMemoryTotalStore();
+    }
+
+    @Bean
+    @Profile("file")
+    public TotalStore fileStore() {
+        return new FileTotalStore(Path.of("data", "total.txt"));
+    }
+
+    @Bean
+    public CounterService counterService(TotalStore store, MessageSink messageSink) {
+        return new CounterService(store, messageSink);
+    }
+
+    @Bean
+    public CommandLineRunner demonstration(CounterService counterService) {
+        return args -> {
+            counterService.add(new BigDecimal("10"));
+            counterService.add(new BigDecimal("57"));
+        };
+    }
 }
