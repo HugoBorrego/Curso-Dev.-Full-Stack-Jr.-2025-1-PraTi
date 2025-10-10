@@ -10,17 +10,17 @@ import java.util.Date;
 public class Comanda {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id_coamnda;
+    private long id_comanda;
     private String nome_cliente;
     private Date data;
     private int nr_mesa;
 
-    public long getId_coamnda() {
-        return id_coamnda;
+    public long getId_comanda() {
+        return id_comanda;
     }
 
-    public void setId_coamnda(long id_coamnda) {
-        this.id_coamnda = id_coamnda;
+    public void setId_comanda(long id_comanda) {
+        this.id_comanda = id_comanda;
     }
 
     public String getNome_cliente() {
